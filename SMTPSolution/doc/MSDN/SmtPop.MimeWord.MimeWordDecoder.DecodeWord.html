@@ -1,0 +1,64 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>MimeWordDecoder.DecodeWord Method</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">Simple Mail and Post Office Protocol for .Net (SmtPop)</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">MimeWordDecoder.DecodeWord Method </h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p> Decodes a "Mime word" encoded string </p>
+      <div class="syntax">public static <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemStringClassTopic.htm">string</a> DecodeWord(<br />   <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemStringClassTopic.htm">string</a> <i>code</i><br />);</div>
+      <h4 class="dtH4">Parameters</h4>
+      <dl>
+        <dt>
+          <i>code</i>
+        </dt>
+        <dd>A mime word encoded string</dd>
+      </dl>
+      <h4 class="dtH4">Return Value</h4>
+      <p>The decoded string</p>
+      <h4 class="dtH4">Example</h4>
+      <p>
+            <pre class="code">MimeWordDecoder dec = new MimeWordDecoder ();
+
+String subject = dec.DecodeWord ("=?iso-8859-1?q?Youpi=20it=20work?=");
+Console.Out.Writeline (subject);
+</pre> Output: Youpi it work </p>
+      <h4 class="dtH4">See Also</h4>
+      <p>
+        <a href="SmtPop.MimeWord.MimeWordDecoder.html">MimeWordDecoder Class</a> | <a href="SmtPop.MimeWord.html">SmtPop.MimeWord Namespace</a></p>
+      <object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;">
+        <param name="Keyword" value="DecodeWord method">
+        </param>
+        <param name="Keyword" value="DecodeWord method, MimeWordDecoder class">
+        </param>
+        <param name="Keyword" value="MimeWordDecoder.DecodeWord method">
+        </param>
+      </object>
+      <hr />
+      <div id="footer">
+        <p>
+          <a href="http://sourceforge.net/projects/dotnetctrlext">(c) 2004-2006 sillycoder@users.sourceforge.net </a>
+        </p>
+        <p>Generated from assembly smtpop [0.5.1.33667]</p>
+      </div>
+    </div>
+  </body>
+</html>

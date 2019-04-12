@@ -1,0 +1,42 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetControlExtender", "DotNetControlExtender.csproj", "{F6E4B09F-77F9-494E-A872-17A135F76D08}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMenuExtender", "TestMenuExtender\TestMenuExtender.csproj", "{D2E760B9-8F51-46EF-86B1-2EFC6D1CF9A2}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestFreeShapeForm", "TestFreeShapeForm\TestFreeShapeForm.csproj", "{CB3F9F5B-5334-46A6-BF0E-5F44CED59FF7}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+		Release Signed = Release Signed
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{F6E4B09F-77F9-494E-A872-17A135F76D08}.Debug.ActiveCfg = Debug|.NET
+		{F6E4B09F-77F9-494E-A872-17A135F76D08}.Debug.Build.0 = Debug|.NET
+		{F6E4B09F-77F9-494E-A872-17A135F76D08}.Release.ActiveCfg = Release|.NET
+		{F6E4B09F-77F9-494E-A872-17A135F76D08}.Release.Build.0 = Release|.NET
+		{F6E4B09F-77F9-494E-A872-17A135F76D08}.Release Signed.ActiveCfg = Release Signed|.NET
+		{D2E760B9-8F51-46EF-86B1-2EFC6D1CF9A2}.Debug.ActiveCfg = Debug|.NET
+		{D2E760B9-8F51-46EF-86B1-2EFC6D1CF9A2}.Debug.Build.0 = Debug|.NET
+		{D2E760B9-8F51-46EF-86B1-2EFC6D1CF9A2}.Release.ActiveCfg = Release|.NET
+		{D2E760B9-8F51-46EF-86B1-2EFC6D1CF9A2}.Release.Build.0 = Release|.NET
+		{D2E760B9-8F51-46EF-86B1-2EFC6D1CF9A2}.Release Signed.ActiveCfg = Release Signed|.NET
+		{CB3F9F5B-5334-46A6-BF0E-5F44CED59FF7}.Debug.ActiveCfg = Debug|.NET
+		{CB3F9F5B-5334-46A6-BF0E-5F44CED59FF7}.Debug.Build.0 = Debug|.NET
+		{CB3F9F5B-5334-46A6-BF0E-5F44CED59FF7}.Release.ActiveCfg = Release|.NET
+		{CB3F9F5B-5334-46A6-BF0E-5F44CED59FF7}.Release.Build.0 = Release|.NET
+		{CB3F9F5B-5334-46A6-BF0E-5F44CED59FF7}.Release Signed.ActiveCfg = Release|.NET
+		{CB3F9F5B-5334-46A6-BF0E-5F44CED59FF7}.Release Signed.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

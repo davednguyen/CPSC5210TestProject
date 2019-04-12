@@ -1,0 +1,20 @@
+cFormExtender1 [DotNetControlExtender.CFormExtender]
+cFormExtender1 [DotNetControlExtender.CFormExtender]
+cFormExtender1 [DotNetControlExtender.CFormExtender]
+Form1 [System.Windows.Forms.Form], Text: 
+Form1 [System.Windows.Forms.Form], Text: 
+Form1 [System.Windows.Forms.Form], Text: 
+Form1 [System.Windows.Forms.Form], Text: 
+Form1 [System.Windows.Forms.Form], Text: 
+Form1 [System.Windows.Forms.Form], Text: 
+Form1 [System.Windows.Forms.Form], Text: 
+Form1 [System.Windows.Forms.Form], Text: 
+Form1 [System.Windows.Forms.Form], Text: 
+Form1 [System.Windows.Forms.Form], Text: 
+Form1 [System.Windows.Forms.Form], Text: 
+Form1 [System.Windows.Forms.Form], Text: Form1
+Form1 [System.Windows.Forms.Form], Text: Form1
+buttonQuit [System.Windows.Forms.Button], Text: Quit
+imageList1 [System.Windows.Forms.ImageList] Images.Count: 2, ImageSize: {Width=16, Height=16}
+cFormExtender1 [DotNetControlExtender.CFormExtender]
+pictureBox1 [System.Windows.Forms.PictureBox], SizeMode: Normal

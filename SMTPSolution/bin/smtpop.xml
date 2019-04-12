@@ -1,0 +1,3720 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>smtpop</name>
+    </assembly>
+    <members>
+        <member name="T:SmtPop.AuthentifiedEventParam">
+            <summary>
+            Authentified event parameters
+            </summary>
+        </member>
+        <member name="F:SmtPop.AuthentifiedEventParam.m_user">
+            <summary>
+            The user name
+            </summary>
+        </member>
+        <member name="M:SmtPop.AuthentifiedEventParam.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="User"></param>
+        </member>
+        <member name="P:SmtPop.AuthentifiedEventParam.User">
+            <summary>
+            The user name
+            </summary>
+        </member>
+        <member name="T:SmtPop.ClientCommandEventParam">
+            <summary>
+            Description résumée de ClientCommandEventParam.
+            </summary>
+        </member>
+        <member name="M:SmtPop.ClientCommandEventParam.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="command">The sended command</param>
+        </member>
+        <member name="P:SmtPop.ClientCommandEventParam.Command">
+            <summary>
+            The sended command
+            </summary>
+        </member>
+        <member name="T:SmtPop.Config">
+            <summary>
+            Default configurtaion for SmtPop
+            </summary>
+        </member>
+        <member name="F:SmtPop.Config.defaultEncoding">
+            <summary>
+            default encoding for message
+            </summary>
+        </member>
+        <member name="F:SmtPop.Config.MaxLineLength">
+            <summary>
+            default line length in message
+            </summary>
+        </member>
+        <member name="T:SmtPop.ConnectEventParam">
+            <summary>
+            Connection event parameters
+            </summary>
+        </member>
+        <member name="M:SmtPop.ConnectEventParam.#ctor(System.String,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="Host">The host name of the server</param>
+            <param name="Port">The connection port on the server</param>
+        </member>
+        <member name="P:SmtPop.ConnectEventParam.Host">
+            <summary>
+            The host name
+            </summary>
+        </member>
+        <member name="P:SmtPop.ConnectEventParam.Port">
+            <summary>
+            The connection port
+            </summary>
+        </member>
+        <member name="T:SmtPop.EventHandler">
+            <summary>
+            Smtpop event declaration
+            </summary>
+        </member>
+        <member name="T:SmtPop.ConnectEventHandler">
+            <summary>
+            The connexion event
+            </summary>
+        </member>
+        <member name="T:SmtPop.AuthentifiedEventHandler">
+            <summary>
+            The authentified event
+            </summary>
+        </member>
+        <member name="T:SmtPop.ReceivedEventHandler">
+            <summary>
+            The received event
+            </summary>
+        </member>
+        <member name="T:SmtPop.ServerDialogEventHandler">
+            <summary>
+            The Dialog with the server. Fire for each sended command and each received answer
+            </summary>
+        </member>
+        <member name="T:SmtPop.ServerAnswerEventHandler">
+            <summary>
+            The Dialog with the server. Fire for each received answer
+            </summary>
+        </member>
+        <member name="T:SmtPop.ClientCommandEventHandler">
+            <summary>
+            The Dialog with the server. Fire for each sended command
+            </summary>
+        </member>
+        <member name="T:SmtPop.MailAddress">
+            <summary>
+            The class handle an RFC2822 email address
+            </summary>
+        </member>
+        <member name="F:SmtPop.MailAddress.m_src">
+            <summary>
+            A string containing the source of the adress
+            </summary>
+            <remarks>
+            src contain the original string of the address. It may contain a
+            full adress (name + mailbox) or a partial address (mailbox)
+            </remarks>
+        </member>
+        <member name="F:SmtPop.MailAddress.m_name">
+            <summary>
+            A string containing the name part of the address
+            </summary>
+        </member>
+        <member name="F:SmtPop.MailAddress.m_mailbox">
+            <summary>
+            A string containing the mailbox part of the address
+            </summary>
+        </member>
+        <member name="F:SmtPop.MailAddress.m_domain">
+            <summary>
+            A string containing the domain part of the address
+            </summary>
+        </member>
+        <member name="F:SmtPop.MailAddress.m_valid">
+            <summary>
+            True if the address is valid. False otherwise
+            </summary>
+        </member>
+        <member name="M:SmtPop.MailAddress.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SmtPop.MailAddress.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="src">A string containing an smtp address</param>
+            <remarks>
+            Valid address are:<br/>
+            <code escaped="true">
+            Toto &lt;toto@toto.com&gt;
+            &lt;youpi@bad.trip.com&gt;
+            </code>
+            </remarks>
+            <exception cref="T:SmtPop.MailAddressException">Invalid address syntax</exception>
+        </member>
+        <member name="M:SmtPop.MailAddress.Parse(System.String)">
+            <summary>
+            Read an email address from string
+            </summary>
+            <param name="src">An email address string</param>
+            <example>
+            <code>
+            MailAddress m = new MailAddress ();
+            m.Parse ("Toto &lt;toto@tyty.com&gt;");
+            </code>
+            </example>
+        </member>
+        <member name="M:SmtPop.MailAddress.#ctor(System.String,System.String)">
+            <summary>Constructor with name and email address</summary>
+            <example>
+            <code>MailAddress a = new MailAddress("Johny", "johny@toto.com");</code>
+            </example>
+            <param name="name">The name part of the address</param>
+            <param name="mailbox">The mailbox part of the address</param>
+        </member>
+        <member name="M:SmtPop.MailAddress.ToString">
+            <summary>
+            Returns a string containing the MailAdress details
+            </summary>
+            <returns>A string containing the MailAddress details</returns>
+        </member>
+        <member name="M:SmtPop.MailAddress.Save">
+            <summary>
+            The method builds the mime src (the valid RFC2822  address)
+            </summary>
+        </member>
+        <member name="M:SmtPop.MailAddress.ReadAddresses(SmtPop.MailAddressList@,System.String)">
+            <summary>
+            Read adresses from header line and add each address in "List"
+            </summary>
+            <param name="List">The address list to initialize</param>
+            <param name="Src">A string containing header line with address list</param>
+        </member>
+        <member name="P:SmtPop.MailAddress.Src">
+            <summary>
+            A string containing the address in literal format
+            </summary>
+        </member>
+        <member name="P:SmtPop.MailAddress.Name">
+            <summary>
+            A string containing the name part of the address
+            </summary>
+            <example>
+            <code>
+            MailAddress m = new MailAddress ("Toto &lt;tyty@tata.com&gt;");
+            Console.Out.WriteLine (m.Name);
+            </code>
+            Output : Toto
+            </example>
+        </member>
+        <member name="P:SmtPop.MailAddress.Domain">
+            <summary>
+            A string containing the domain part of the mailbox
+            </summary>
+        </member>
+        <member name="P:SmtPop.MailAddress.Mailbox">
+            <summary>
+            A string containing the mailbox part of the address
+            </summary>
+        </member>
+        <member name="P:SmtPop.MailAddress.IsValid">
+            <summary>
+            Validity flag of the address
+            </summary>
+        </member>
+        <member name="T:SmtPop.MailAddressList">
+            <summary>
+            	A strongly-typed collection of <see cref="T:SmtPop.MailAddress"/> objects.
+            </summary>
+        </member>
+        <member name="M:SmtPop.MailAddressList.Synchronized(SmtPop.MailAddressList)">
+            <summary>
+            	Creates a synchronized (thread-safe) wrapper for a 
+                <c>MailAddressList</c> instance.
+            </summary>
+            <returns>
+                An <c>MailAddressList</c> wrapper that is synchronized (thread-safe).
+            </returns>
+        </member>
+        <member name="M:SmtPop.MailAddressList.ReadOnly(SmtPop.MailAddressList)">
+            <summary>
+            	Creates a read-only wrapper for a 
+                <c>MailAddressList</c> instance.
+            </summary>
+            <returns>
+                An <c>MailAddressList</c> wrapper that is read-only.
+            </returns>
+        </member>
+        <member name="M:SmtPop.MailAddressList.#ctor">
+            <summary>
+            	Initializes a new instance of the <c>MailAddressList</c> class
+            	that is empty and has the default initial capacity.
+            </summary>
+        </member>
+        <member name="M:SmtPop.MailAddressList.#ctor(System.Int32)">
+            <summary>
+            	Initializes a new instance of the <c>MailAddressList</c> class
+            	that has the specified initial capacity.
+            </summary>
+            <param name="capacity">
+            	The number of elements that the new <c>MailAddressList</c> is initially capable of storing.
+            </param>
+        </member>
+        <member name="M:SmtPop.MailAddressList.#ctor(SmtPop.MailAddressList)">
+            <summary>
+            	Initializes a new instance of the <c>MailAddressList</c> class
+            	that contains elements copied from the specified <c>MailAddressList</c>.
+            </summary>
+            <param name="c">The <c>MailAddressList</c> whose elements are copied to the new collection.</param>
+        </member>
+        <member name="M:SmtPop.MailAddressList.#ctor(SmtPop.MailAddress[])">
+            <summary>
+            	Initializes a new instance of the <c>MailAddressList</c> class
+            	that contains elements copied from the specified <see cref="T:SmtPop.MailAddress"/> array.
+            </summary>
+            <param name="a">The <see cref="T:SmtPop.MailAddress"/> array whose elements are copied to the new list.</param>
+        </member>
+        <member name="M:SmtPop.MailAddressList.#ctor(SmtPop.MailAddressList.Tag)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="t">Unused</param>
+        </member>
+        <member name="M:SmtPop.MailAddressList.CopyTo(SmtPop.MailAddress[])">
+            <summary>
+            	Copies the entire <c>MailAddressList</c> to a one-dimensional
+            	<see cref="T:SmtPop.MailAddress"/> array.
+            </summary>
+            <param name="array">The one-dimensional <see cref="T:SmtPop.MailAddress"/> array to copy to.</param>
+        </member>
+        <member name="M:SmtPop.MailAddressList.CopyTo(SmtPop.MailAddress[],System.Int32)">
+            <summary>
+            	Copies the entire <c>MailAddressList</c> to a one-dimensional
+            	<see cref="T:SmtPop.MailAddress"/> array, starting at the specified index of the target array.
+            </summary>
+            <param name="array">The one-dimensional <see cref="T:SmtPop.MailAddress"/> array to copy to.</param>
+            <param name="start">The zero-based index in <paramref name="array"/> at which copying begins.</param>
+        </member>
+        <member name="M:SmtPop.MailAddressList.Add(SmtPop.MailAddress)">
+            <summary>
+            	Adds a <see cref="T:SmtPop.MailAddress"/> to the end of the <c>MailAddressList</c>.
+            </summary>
+            <param name="item">The <see cref="T:SmtPop.MailAddress"/> to be added to the end of the <c>MailAddressList</c>.</param>
+            <returns>The index at which the value has been added.</returns>
+        </member>
+        <member name="M:SmtPop.MailAddressList.Clear">
+            <summary>
+            	Removes all elements from the <c>MailAddressList</c>.
+            </summary>
+        </member>
+        <member name="M:SmtPop.MailAddressList.Clone">
+            <summary>
+            	Creates a shallow copy of the <see cref="T:SmtPop.MailAddressList"/>.
+            </summary>
+        </member>
+        <member name="M:SmtPop.MailAddressList.Contains(SmtPop.MailAddress)">
+            <summary>
+            	Determines whether a given <see cref="T:SmtPop.MailAddress"/> is in the <c>MailAddressList</c>.
+            </summary>
+            <param name="item">The <see cref="T:SmtPop.MailAddress"/> to check for.</param>
+            <returns><c>true</c> if <paramref name="item"/> is found in the <c>MailAddressList</c>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:SmtPop.MailAddressList.IndexOf(SmtPop.MailAddress)">
+            <summary>
+            	Returns the zero-based index of the first occurrence of a <see cref="T:SmtPop.MailAddress"/>
+            	in the <c>MailAddressList</c>.
+            </summary>
+            <param name="item">The <see cref="T:SmtPop.MailAddress"/> to locate in the <c>MailAddressList</c>.</param>
+            <returns>
+            	The zero-based index of the first occurrence of <paramref name="item"/> 
+            	in the entire <c>MailAddressList</c>, if found; otherwise, -1.
+            </returns>
+        </member>
+        <member name="M:SmtPop.MailAddressList.Insert(System.Int32,SmtPop.MailAddress)">
+            <summary>
+            	Inserts an element into the <c>MailAddressList</c> at the specified index.
+            </summary>
+            <param name="index">The zero-based index at which <paramref name="item"/> should be inserted.</param>
+            <param name="item">The <see cref="T:SmtPop.MailAddress"/> to insert.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            	<para><paramref name="index"/> is less than zero</para>
+            	<para>-or-</para>
+            	<para><paramref name="index"/> is equal to or greater than <see cref="P:SmtPop.MailAddressList.Count"/>.</para>
+            </exception>
+        </member>
+        <member name="M:SmtPop.MailAddressList.Remove(SmtPop.MailAddress)">
+            <summary>
+            	Removes the first occurrence of a specific <see cref="T:SmtPop.MailAddress"/> from the <c>MailAddressList</c>.
+            </summary>
+            <param name="item">The <see cref="T:SmtPop.MailAddress"/> to remove from the <c>MailAddressList</c>.</param>
+            <exception cref="T:System.ArgumentException">
+            	The specified <see cref="T:SmtPop.MailAddress"/> was not found in the <c>MailAddressList</c>.
+            </exception>
+        </member>
+        <member name="M:SmtPop.MailAddressList.RemoveAt(System.Int32)">
+            <summary>
+            	Removes the element at the specified index of the <c>MailAddressList</c>.
+            </summary>
+            <param name="index">The zero-based index of the element to remove.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            	<para><paramref name="index"/> is less than zero</para>
+            	<para>-or-</para>
+            	<para><paramref name="index"/> is equal to or greater than <see cref="P:SmtPop.MailAddressList.Count"/>.</para>
+            </exception>
+        </member>
+        <member name="M:SmtPop.MailAddressList.GetEnumerator">
+            <summary>
+            	Returns an enumerator that can iterate through the <c>MailAddressList</c>.
+            </summary>
+            <returns>An <see cref="T:SmtPop.MailAddressList.Enumerator"/> for the entire <c>MailAddressList</c>.</returns>
+        </member>
+        <member name="M:SmtPop.MailAddressList.AddRange(SmtPop.MailAddressList)">
+            <summary>
+            	Adds the elements of another <c>MailAddressList</c> to the current <c>MailAddressList</c>.
+            </summary>
+            <param name="x">The <c>MailAddressList</c> whose elements should be added to the end of the current <c>MailAddressList</c>.</param>
+            <returns>The new <see cref="P:SmtPop.MailAddressList.Count"/> of the <c>MailAddressList</c>.</returns>
+        </member>
+        <member name="M:SmtPop.MailAddressList.AddRange(SmtPop.MailAddress[])">
+            <summary>
+            	Adds the elements of a <see cref="T:SmtPop.MailAddress"/> array to the current <c>MailAddressList</c>.
+            </summary>
+            <param name="x">The <see cref="T:SmtPop.MailAddress"/> array whose elements should be added to the end of the <c>MailAddressList</c>.</param>
+            <returns>The new <see cref="P:SmtPop.MailAddressList.Count"/> of the <c>MailAddressList</c>.</returns>
+        </member>
+        <member name="M:SmtPop.MailAddressList.TrimToSize">
+            <summary>
+            	Sets the capacity to the actual number of elements.
+            </summary>
+        </member>
+        <member name="M:SmtPop.MailAddressList.ValidateIndex(System.Int32)">
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            	<para><paramref name="index"/> is less than zero</para>
+            	<para>-or-</para>
+            	<para><paramref name="index"/> is equal to or greater than <see cref="P:SmtPop.MailAddressList.Count"/>.</para>
+            </exception>
+        </member>
+        <member name="M:SmtPop.MailAddressList.ValidateIndex(System.Int32,System.Boolean)">
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            	<para><paramref name="index"/> is less than zero</para>
+            	<para>-or-</para>
+            	<para><paramref name="index"/> is equal to or greater than <see cref="P:SmtPop.MailAddressList.Count"/>.</para>
+            </exception>
+        </member>
+        <member name="P:SmtPop.MailAddressList.Count">
+            <summary>
+            	Gets the number of elements actually contained in the <c>MailAddressList</c>.
+            </summary>
+        </member>
+        <member name="P:SmtPop.MailAddressList.IsSynchronized">
+            <summary>
+            	Gets a value indicating whether access to the collection is synchronized (thread-safe).
+            </summary>
+            <returns>true if access to the ICollection is synchronized (thread-safe); otherwise, false.</returns>
+        </member>
+        <member name="P:SmtPop.MailAddressList.SyncRoot">
+            <summary>
+            	Gets an object that can be used to synchronize access to the collection.
+            </summary>
+        </member>
+        <member name="P:SmtPop.MailAddressList.Item(System.Int32)">
+            <summary>
+            	Gets or sets the <see cref="T:SmtPop.MailAddress"/> at the specified index.
+            </summary>
+            <param name="index">The zero-based index of the element to get or set.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            	<para><paramref name="index"/> is less than zero</para>
+            	<para>-or-</para>
+            	<para><paramref name="index"/> is equal to or greater than <see cref="P:SmtPop.MailAddressList.Count"/>.</para>
+            </exception>
+        </member>
+        <member name="P:SmtPop.MailAddressList.IsFixedSize">
+            <summary>
+            	Gets a value indicating whether the collection has a fixed size.
+            </summary>
+            <value>true if the collection has a fixed size; otherwise, false. The default is false</value>
+        </member>
+        <member name="P:SmtPop.MailAddressList.IsReadOnly">
+            <summary>
+            	gets a value indicating whether the <B>IList</B> is read-only.
+            </summary>
+            <value>true if the collection is read-only; otherwise, false. The default is false</value>
+        </member>
+        <member name="P:SmtPop.MailAddressList.Capacity">
+            <summary>
+            	Gets or sets the number of elements the <c>MailAddressList</c> can contain.
+            </summary>
+        </member>
+        <member name="T:SmtPop.MailAddressList.IMailAddressListEnumerator">
+            <summary>
+            	Supports type-safe iteration over a <see cref="T:SmtPop.MailAddressList"/>.
+            </summary>
+        </member>
+        <member name="M:SmtPop.MailAddressList.IMailAddressListEnumerator.MoveNext">
+            <summary>
+            	Advances the enumerator to the next element in the collection.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">
+            	The collection was modified after the enumerator was created.
+            </exception>
+            <returns>
+            	<c>true</c> if the enumerator was successfully advanced to the next element; 
+            	<c>false</c> if the enumerator has passed the end of the collection.
+            </returns>
+        </member>
+        <member name="M:SmtPop.MailAddressList.IMailAddressListEnumerator.Reset">
+            <summary>
+            	Sets the enumerator to its initial position, before the first element in the collection.
+            </summary>
+        </member>
+        <member name="P:SmtPop.MailAddressList.IMailAddressListEnumerator.Current">
+            <summary>
+            	Gets the current element in the collection.
+            </summary>
+        </member>
+        <member name="T:SmtPop.MailAddressList.Tag">
+            <summary>
+            Action
+            </summary>
+        </member>
+        <member name="F:SmtPop.MailAddressList.Tag.Default">
+            <summary>
+            Default action
+            </summary>
+        </member>
+        <member name="T:SmtPop.MailAddressList.Enumerator">
+            <summary>
+            	Supports simple iteration over a <see cref="T:SmtPop.MailAddressList"/>.
+            </summary>
+        </member>
+        <member name="M:SmtPop.MailAddressList.Enumerator.#ctor(SmtPop.MailAddressList)">
+            <summary>
+            	Initializes a new instance of the <c>Enumerator</c> class.
+            </summary>
+            <param name="tc"></param>
+        </member>
+        <member name="M:SmtPop.MailAddressList.Enumerator.MoveNext">
+            <summary>
+            	Advances the enumerator to the next element in the collection.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">
+            	The collection was modified after the enumerator was created.
+            </exception>
+            <returns>
+            	<c>true</c> if the enumerator was successfully advanced to the next element; 
+            	<c>false</c> if the enumerator has passed the end of the collection.
+            </returns>
+        </member>
+        <member name="M:SmtPop.MailAddressList.Enumerator.Reset">
+            <summary>
+            	Sets the enumerator to its initial position, before the first element in the collection.
+            </summary>
+        </member>
+        <member name="P:SmtPop.MailAddressList.Enumerator.Current">
+            <summary>
+            	Gets the current element in the collection.
+            </summary>
+        </member>
+        <member name="T:SmtPop.MailAddressException">
+            <summary>
+            MailAdress exception
+            </summary>
+        </member>
+        <member name="M:SmtPop.MailAddressException.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="err">
+            A string containing the exception details
+            </param>
+        </member>
+        <member name="T:SmtPop.MessageBuilder">
+            <summary>
+            This class help building mail message
+            </summary>
+        </member>
+        <member name="M:SmtPop.MessageBuilder.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SmtPop.MessageBuilder.Build(System.String,System.String,System.String,System.String,SmtPop.MimeTextContentType)">
+            <summary>
+            Build a MimeMessage with text Body
+            </summary>
+            <param name="From">The From address</param>
+            <param name="To">The destination address</param>
+            <param name="Subject">The subject</param>
+            <param name="Body">The body text</param>
+            <param name="TextType">The body Content-Type</param>
+            <returns>A MimeMessage</returns>
+            <remarks>All text is encoded with the default charset define in SmtPop.Config</remarks>
+            <example>
+            <code>
+            MimeMessage m = MessageBuilder (&lt;test@toto.com&gt;,&lt;test2@tyty.com&gt;,"Test","This is a test", MimeTextContentType.TextPlain);
+            
+            Smtp.Send (m);
+            
+            </code>
+            </example>
+        </member>
+        <member name="M:SmtPop.MessageBuilder.Build(System.String,System.String,System.String,System.String,SmtPop.MimeTextContentType,System.Drawing.Image,System.Drawing.Imaging.ImageFormat,System.String)">
+            <summary>
+            Build a MimeMessage with text body and an image as attachment
+            </summary>
+            <param name="From">The from address</param>
+            <param name="To">The destination address</param>
+            <param name="Subject">The mail subject</param>
+            <param name="Body">The mail body text</param>
+            <param name="TextType">The body Content-Type</param>
+            <param name="image">The image to send as attachment</param>
+            <param name="format">The image format</param>
+            <param name="name">The image name</param>
+            <returns>A MimeMessage</returns>
+            <remarks>All text is encoded with the default charset define in SmtPop.Config</remarks>
+            
+        </member>
+        <member name="M:SmtPop.MessageBuilder.Build(System.String,System.String,System.String,System.String,SmtPop.MimeTextContentType,System.Byte[],System.String,System.String)">
+            <summary>
+            Build a MimeMessage with text body and binary as attachment
+            </summary>
+            <param name="From">The source address</param>
+            <param name="To">The destination address</param>
+            <param name="Subject">The mail subject</param>
+            <param name="Body">The mail body text</param>
+            <param name="TextType">The body Content-Type</param>
+            <param name="Data">The binary data to send as attachment</param>
+            <param name="MimeType">The mime type for binary data (ie "application/binary")</param>
+            <param name="Name">The name of the attachment</param>
+            <returns>A MimeMessage</returns>
+            <remarks>All text is encoded with the default charset define in SmtPop.Config</remarks>
+        </member>
+        <member name="M:SmtPop.MessageBuilder.Build(System.String,System.String,System.String,System.String,SmtPop.MimeTextContentType,System.IO.BinaryReader,System.String,System.String)">
+            <summary>
+            Build a MimeMessage with text body and binary data as attachment
+            </summary>
+            <param name="From">The source address</param>
+            <param name="To">The destination address</param>
+            <param name="Subject">The mail subjec</param>
+            <param name="Body">The text body</param>
+            <param name="TextType">The body Content-Type</param>
+            <param name="Stream">The stream that contain binary data</param>
+            <param name="MimeType">The Mime type of binary data (ie "application/binary")</param>
+            <param name="Name">The attachment's name</param>
+            <returns>A MimeMessage</returns>
+            <remarks>All text is encoded with the default charset define in SmtPop.Config</remarks>
+        </member>
+        <member name="M:SmtPop.MessageBuilder.Build(System.String,System.String,System.String,System.String,SmtPop.MimeTextContentType,System.Object,System.String,System.String)">
+            <summary>
+            Build a MimeMessage with text body and binary data as attachment
+            </summary>
+            <param name="From">The source address</param>
+            <param name="To">The destination address</param>
+            <param name="Subject">The mail subjec</param>
+            <param name="Body">The text body</param>
+            <param name="TextType">The body Content-Type</param>
+            <param name="data">The object to serialize in binary data</param>
+            <param name="MimeType">The Mime type of binary data (ie "application/binary")</param>
+            <param name="Name">The attachment's name</param>
+            <returns>A MimeMessage</returns>
+            <remarks>All text is encoded with the default charset define in SmtPop.Config<br/>The data Object must be binary serializable</remarks>
+        </member>
+        <member name="T:SmtPop.MimeAttachment">
+            <summary>
+            An attachment in a MimeMessage
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeAttachment.endl">
+            <summary>
+            A constant defining end of line sequence
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeAttachment.m_multipart">
+            <summary>
+            Multipart flag
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeAttachment.m_headers">
+            <summary>
+            The attachment headers
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeAttachment.m_header">
+            <summary>
+            The attachment header source
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeAttachment.m_headerBuilder">
+            <summary>
+            A temporary builder to build message header
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeAttachment.m_body">
+            <summary>
+            The attachment body source
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeAttachment.m_bodyBuilder">
+            <summary>
+            A temporary builder to build message body
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeAttachment.m_boundary">
+            <summary>
+            The boundary key (see multipart in Mime format)
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeAttachment.m_state">
+            <summary>
+            Current decoder state
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeAttachment.m_last_field">
+            <summary>
+            Last header field decoded
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeAttachment.m_attachments">
+            <summary>
+            The attachments list
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeAttachment.m_last_attachment">
+            <summary>
+            Current attachment decoded
+            </summary>
+        </member>
+        <member name="M:SmtPop.MimeAttachment.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SmtPop.MimeAttachment.#ctor(System.String,SmtPop.MimeTextContentType,SmtPop.MimeTransferEncoding,System.Text.Encoding)">
+            <summary>
+            Constructs an attachment from a body string
+            </summary>
+            <param name="body">The body text</param>
+            <param name="type">The content-type text</param>
+            <param name="coding">The text Content-transfer-encoding</param>
+            <param name="charset">The text charset</param>
+            <example>
+            <code>
+            MimeAttachment m = new MimeAttachment ("hello", MimeTextContentType.TextPlain, MimeCharset.UTF8);
+            </code>
+            </example>
+        </member>
+        <member name="M:SmtPop.MimeAttachment.#ctor(System.String,SmtPop.MimeTextContentType)">
+            <summary>
+            Constructs an attahcment from string
+            </summary>
+            <param name="body">A string containing the attachment body text</param>
+            <param name="type">The Content-Type of the attachement</param>
+            <remarks>
+            This method initializes a body text with utf8 charset, base64 transfer encoding and inline disposition.
+            </remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachment.#ctor(System.String,System.String,System.String,SmtPop.MimeAttachment.MimeDisposition)">
+            <summary>
+            Constructs an attachment from a local file
+            </summary>
+            <param name="path">Path of local file to send</param>
+            <param name="filename_send">The filename of the atachment</param>
+            <param name="content_type">The Mime Content-Type </param>
+            <param name="disposition">The Mime disposition</param>
+        </member>
+        <member name="M:SmtPop.MimeAttachment.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructs an attachment from a local file
+            </summary>
+            <param name="path">The local path of the file to send</param>
+            <param name="filename_send">The filename send in attachment</param>
+            <param name="content_type">Mime type of the file</param>
+        </member>
+        <member name="M:SmtPop.MimeAttachment.#ctor(System.String,System.String,System.String,System.Byte[],SmtPop.MimeAttachment.MimeDisposition)">
+            <summary>
+            Constructs an attachment from a memory buffer
+            </summary>
+            <param name="name">The attachment name</param>
+            <param name="filename_send">The attachment filename if need</param>
+            <param name="content_type">The content type</param>
+            <param name="buf">The buffer to send</param>
+            <param name="disposition">The file disposition</param>
+        </member>
+        <member name="M:SmtPop.MimeAttachment.SetBodyText(System.String)">
+            <summary>
+            Initilizes attachment as text. The text is coded in utf8 Base64
+            </summary>
+            <param name="body">The body text</param>
+        </member>
+        <member name="M:SmtPop.MimeAttachment.SetBodyHtml(System.String)">
+            <summary>
+            Initilizes attachment as html. The text is coded in utf8 Base64
+            </summary>
+            <param name="body">The body text</param>
+        </member>
+        <member name="M:SmtPop.MimeAttachment.SetBodyText(System.String,SmtPop.MimeTransferEncoding,SmtPop.MimeTextContentType)">
+            <summary>
+            Initilizes attachment as text
+            </summary>
+            <param name="body">The body text of attachment</param>
+            <param name="TransferEncoding">The encoding for transfer</param>
+            <param name="ContentType">The Mime content type</param>
+        </member>
+        <member name="M:SmtPop.MimeAttachment.CheckAttachmentEnd">
+             <summary>
+             Check if an attachment is pending before stop decoding
+             </summary>
+             <returns>
+             If the method add an attachment the method return 1. Otherwise it return 0. 
+            </returns>
+        </member>
+        <member name="M:SmtPop.MimeAttachment.AddLine(System.String)">
+            <summary>
+            Add a line to the decoder
+            </summary>
+            <param name="line">A string containing a message line</param>
+            <returns>The method return a positive value if the Attachment need more lines. Otherwise it return 0 to indicate the end of attachment body</returns>
+        </member>
+        <member name="M:SmtPop.MimeAttachment.ToString">
+            <summary>
+            The method returns a string containing MimeAttachment details
+            </summary>
+            <returns>
+            A string containing MimeAttachment details
+            </returns>
+        </member>
+        <member name="M:SmtPop.MimeAttachment.HeaderBoundary">
+            <summary>
+            The method get the multipart boudary. (see multipart/mixed, multipart/alternative ... in Mime format)
+            </summary>
+            <returns>
+            The boundary string
+            </returns>
+        </member>
+        <member name="M:SmtPop.MimeAttachment.IsMultipart">
+            <summary>
+            The method check if the attachment is multipart (see multipart/mixed, multipart/alternative ... in Mime format)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmtPop.MimeAttachment.Write(System.IO.TextWriter)">
+            <summary>
+            Writes attachment to a stream
+            </summary>
+            <param name="stream">The stream to write the attachmment on</param>
+        </member>
+        <member name="M:SmtPop.MimeAttachment.ExtractFilename">
+            <summary>
+            The methods extract the filename parameters from attachment
+            </summary>
+            <returns>The filename value from "Content-Disposition" header</returns>
+        </member>
+        <member name="M:SmtPop.MimeAttachment.GetBytes">
+            <summary>
+            Returns an array of Byte from a base64 attachement
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmtPop.MimeAttachment.GetStream">
+            <summary>
+            Returns Stream from a base64 attachement
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:SmtPop.MimeAttachment.Headers">
+            <summary>
+            Attachment headers array
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeAttachment.Attachments">
+            <summary>
+            Attachments list
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeAttachment.ContentTransferEncoding">
+            <summary>
+            Gets or sets the "Content-Transfer-Encoding" header field
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeAttachment.ContentType">
+            <summary>
+            Gets or sets the "Content-Type" header field
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeAttachment.Body">
+            <summary>
+            The attachment body
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeAttachment.Header">
+            <summary>
+            The attachment header
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeAttachment.Filename">
+            <summary>
+            Return the filename property
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeAttachment.Multipart">
+            <summary>
+            Return the multipart flag
+            </summary>
+        </member>
+        <member name="T:SmtPop.MimeAttachment.decoder_state">
+            <summary>
+             The decoder state
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeAttachment.decoder_state.header">
+            <summary>
+            Decoding header
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeAttachment.decoder_state.body">
+            <summary>
+            Decoding body
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeAttachment.decoder_state.attachment">
+            <summary>
+            Decoding attachment
+            </summary>
+        </member>
+        <member name="T:SmtPop.MimeAttachment.MimeDisposition">
+            <summary>
+            Content-disposition enumeration
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeAttachment.MimeDisposition.inline">
+            <summary>
+            The attachment is a part of the mail message
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeAttachment.MimeDisposition.attachment">
+            <summary>
+            The attachment is a separate file
+            </summary>
+        </member>
+        <member name="T:SmtPop.IMimeAttachmentCollection">
+            <summary>
+            Defines size, enumerators, and synchronization methods for strongly
+            typed collections of <see cref="T:SmtPop.MimeAttachment"/> elements.
+            </summary>
+            <remarks>
+            <b>IMimeAttachmentCollection</b> provides an <see cref="T:System.Collections.ICollection"/>
+            that is strongly typed for <see cref="T:SmtPop.MimeAttachment"/> elements.
+            </remarks>
+        </member>
+        <member name="M:SmtPop.IMimeAttachmentCollection.CopyTo(SmtPop.MimeAttachment[],System.Int32)">
+            <summary>
+            Copies the entire <see cref="T:SmtPop.IMimeAttachmentCollection"/> to a one-dimensional <see cref="T:System.Array"/>
+            of <see cref="T:SmtPop.MimeAttachment"/> elements, starting at the specified index of the target array.
+            </summary>
+            <param name="array">The one-dimensional <see cref="T:System.Array"/> that is the destination of the
+            <see cref="T:SmtPop.MimeAttachment"/> elements copied from the <see cref="T:SmtPop.IMimeAttachmentCollection"/>.
+            The <b>Array</b> must have zero-based indexing.</param>
+            <param name="arrayIndex">The zero-based index in <paramref name="array"/>
+            at which copying begins.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="array"/> is a null reference.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="arrayIndex"/> is less than zero.</exception>
+            <exception cref="T:System.ArgumentException"><para>
+            <paramref name="arrayIndex"/> is equal to or greater than the length of <paramref name="array"/>.
+            </para><para>-or-</para><para>
+            The number of elements in the source <see cref="T:SmtPop.IMimeAttachmentCollection"/> is greater
+            than the available space from <paramref name="arrayIndex"/> to the end of the destination
+            <paramref name="array"/>.</para></exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ICollection.CopyTo(System.Array,System.Int32)"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.IMimeAttachmentCollection.GetEnumerator">
+            <summary>
+            Returns an <see cref="T:SmtPop.IMimeAttachmentEnumerator"/> that can
+            iterate through the <see cref="T:SmtPop.IMimeAttachmentCollection"/>.
+            </summary>
+            <returns>An <see cref="T:SmtPop.IMimeAttachmentEnumerator"/>
+            for the entire <see cref="T:SmtPop.IMimeAttachmentCollection"/>.</returns>
+            <remarks>Please refer to <see cref="M:System.Collections.IEnumerable.GetEnumerator"/> for details.</remarks>
+        </member>
+        <member name="P:SmtPop.IMimeAttachmentCollection.Count">
+            <summary>
+            Gets the number of elements contained in the
+            <see cref="T:SmtPop.IMimeAttachmentCollection"/>.
+            </summary>
+            <value>The number of elements contained in the
+            <see cref="T:SmtPop.IMimeAttachmentCollection"/>.</value>
+            <remarks>Please refer to <see cref="P:System.Collections.ICollection.Count"/> for details.</remarks>
+        </member>
+        <member name="P:SmtPop.IMimeAttachmentCollection.IsSynchronized">
+            <summary>
+            Gets a value indicating whether access to the
+            <see cref="T:SmtPop.IMimeAttachmentCollection"/> is synchronized (thread-safe).
+            </summary>
+            <value><c>true</c> if access to the <see cref="T:SmtPop.IMimeAttachmentCollection"/> is
+            synchronized (thread-safe); otherwise, <c>false</c>. The default is <c>false</c>.</value>
+            <remarks>Please refer to <see cref="P:System.Collections.ICollection.IsSynchronized"/> for details.</remarks>
+        </member>
+        <member name="P:SmtPop.IMimeAttachmentCollection.SyncRoot">
+            <summary>
+            Gets an object that can be used to synchronize access
+            to the <see cref="T:SmtPop.IMimeAttachmentCollection"/>.
+            </summary>
+            <value>An object that can be used to synchronize access
+            to the <see cref="T:SmtPop.IMimeAttachmentCollection"/>.</value>
+            <remarks>Please refer to <see cref="P:System.Collections.ICollection.SyncRoot"/> for details.</remarks>
+        </member>
+        <member name="T:SmtPop.IMimeAttachmentList">
+            <summary>
+            Represents a strongly typed collection of <see cref="T:SmtPop.MimeAttachment"/>
+            objects that can be individually accessed by index.
+            </summary>
+            <remarks>
+            <b>IMimeAttachmentList</b> provides an <see cref="T:System.Collections.IList"/>
+            that is strongly typed for <see cref="T:SmtPop.MimeAttachment"/> elements.
+            </remarks>
+        </member>
+        <member name="M:SmtPop.IMimeAttachmentList.Add(SmtPop.MimeAttachment)">
+            <summary>
+            Adds a <see cref="T:SmtPop.MimeAttachment"/> to the end
+            of the <see cref="T:SmtPop.IMimeAttachmentList"/>.
+            </summary>
+            <param name="value">The <see cref="T:SmtPop.MimeAttachment"/> object
+            to be added to the end of the <see cref="T:SmtPop.IMimeAttachmentList"/>.
+            This argument can be a null reference.
+            </param>
+            <returns>The <see cref="T:SmtPop.IMimeAttachmentList"/> index at which
+            the <paramref name="value"/> has been added.</returns>
+            <exception cref="T:System.NotSupportedException">
+            <para>The <see cref="T:SmtPop.IMimeAttachmentList"/> is read-only.</para>
+            <para>-or-</para>
+            <para>The <b>IMimeAttachmentList</b> has a fixed size.</para></exception>
+            <remarks>Please refer to <see cref="M:System.Collections.IList.Add(System.Object)"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.IMimeAttachmentList.Clear">
+            <summary>
+            Removes all elements from the <see cref="T:SmtPop.IMimeAttachmentList"/>.
+            </summary>
+            <exception cref="T:System.NotSupportedException">
+            <para>The <see cref="T:SmtPop.IMimeAttachmentList"/> is read-only.</para>
+            <para>-or-</para>
+            <para>The <b>IMimeAttachmentList</b> has a fixed size.</para></exception>
+            <remarks>Please refer to <see cref="M:System.Collections.IList.Clear"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.IMimeAttachmentList.Contains(SmtPop.MimeAttachment)">
+            <summary>
+            Determines whether the <see cref="T:SmtPop.IMimeAttachmentList"/>
+            contains the specified <see cref="T:SmtPop.MimeAttachment"/> element.
+            </summary>
+            <param name="value">The <see cref="T:SmtPop.MimeAttachment"/> object
+            to locate in the <see cref="T:SmtPop.IMimeAttachmentList"/>.
+            This argument can be a null reference.
+            </param>
+            <returns><c>true</c> if <paramref name="value"/> is found in the
+            <see cref="T:SmtPop.IMimeAttachmentList"/>; otherwise, <c>false</c>.</returns>
+            <remarks>Please refer to <see cref="M:System.Collections.IList.Contains(System.Object)"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.IMimeAttachmentList.IndexOf(SmtPop.MimeAttachment)">
+            <summary>
+            Returns the zero-based index of the first occurrence of the specified
+            <see cref="T:SmtPop.MimeAttachment"/> in the <see cref="T:SmtPop.IMimeAttachmentList"/>.
+            </summary>
+            <param name="value">The <see cref="T:SmtPop.MimeAttachment"/> object
+            to locate in the <see cref="T:SmtPop.IMimeAttachmentList"/>.
+            This argument can be a null reference.
+            </param>
+            <returns>
+            The zero-based index of the first occurrence of <paramref name="value"/>
+            in the <see cref="T:SmtPop.IMimeAttachmentList"/>, if found; otherwise, -1.
+            </returns>
+            <remarks>Please refer to <see cref="M:System.Collections.IList.IndexOf(System.Object)"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.IMimeAttachmentList.Insert(System.Int32,SmtPop.MimeAttachment)">
+            <summary>
+            Inserts a <see cref="T:SmtPop.MimeAttachment"/> element into the
+            <see cref="T:SmtPop.IMimeAttachmentList"/> at the specified index.
+            </summary>
+            <param name="index">The zero-based index at which
+            <paramref name="value"/> should be inserted.</param>
+            <param name="value">The <see cref="T:SmtPop.MimeAttachment"/> object
+            to insert into the <see cref="T:SmtPop.IMimeAttachmentList"/>.
+            This argument can be a null reference.
+            </param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <para><paramref name="index"/> is less than zero.</para>
+            <para>-or-</para>
+            <para><paramref name="index"/> is greater than
+            <see cref="P:SmtPop.IMimeAttachmentCollection.Count"/>.</para>
+            </exception>
+            <exception cref="T:System.NotSupportedException">
+            <para>The <see cref="T:SmtPop.IMimeAttachmentList"/> is read-only.</para>
+            <para>-or-</para>
+            <para>The <b>IMimeAttachmentList</b> has a fixed size.</para></exception>
+            <remarks>Please refer to <see cref="M:System.Collections.IList.Insert(System.Int32,System.Object)"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.IMimeAttachmentList.Remove(SmtPop.MimeAttachment)">
+            <summary>
+            Removes the first occurrence of the specified <see cref="T:SmtPop.MimeAttachment"/>
+            from the <see cref="T:SmtPop.IMimeAttachmentList"/>.
+            </summary>
+            <param name="value">The <see cref="T:SmtPop.MimeAttachment"/> object
+            to remove from the <see cref="T:SmtPop.IMimeAttachmentList"/>.
+            This argument can be a null reference.
+            </param>
+            <exception cref="T:System.NotSupportedException">
+            <para>The <see cref="T:SmtPop.IMimeAttachmentList"/> is read-only.</para>
+            <para>-or-</para>
+            <para>The <b>IMimeAttachmentList</b> has a fixed size.</para></exception>
+            <remarks>Please refer to <see cref="M:System.Collections.IList.Remove(System.Object)"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.IMimeAttachmentList.RemoveAt(System.Int32)">
+            <summary>
+            Removes the element at the specified index of the
+            <see cref="T:SmtPop.IMimeAttachmentList"/>.
+            </summary>
+            <param name="index">The zero-based index of the element to remove.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <para><paramref name="index"/> is less than zero.</para>
+            <para>-or-</para>
+            <para><paramref name="index"/> is equal to or greater than
+            <see cref="P:SmtPop.IMimeAttachmentCollection.Count"/>.</para>
+            </exception>
+            <exception cref="T:System.NotSupportedException">
+            <para>The <see cref="T:SmtPop.IMimeAttachmentList"/> is read-only.</para>
+            <para>-or-</para>
+            <para>The <b>IMimeAttachmentList</b> has a fixed size.</para></exception>
+            <remarks>Please refer to <see cref="M:System.Collections.IList.RemoveAt(System.Int32)"/> for details.</remarks>
+        </member>
+        <member name="P:SmtPop.IMimeAttachmentList.IsFixedSize">
+            <summary>
+            Gets a value indicating whether the <see cref="T:SmtPop.IMimeAttachmentList"/> has a fixed size.
+            </summary>
+            <value><c>true</c> if the <see cref="T:SmtPop.IMimeAttachmentList"/> has a fixed size;
+            otherwise, <c>false</c>. The default is <c>false</c>.</value>
+            <remarks>Please refer to <see cref="P:System.Collections.IList.IsFixedSize"/> for details.</remarks>
+        </member>
+        <member name="P:SmtPop.IMimeAttachmentList.IsReadOnly">
+            <summary>
+            Gets a value indicating whether the <see cref="T:SmtPop.IMimeAttachmentList"/> is read-only.
+            </summary>
+            <value><c>true</c> if the <see cref="T:SmtPop.IMimeAttachmentList"/> is read-only;
+            otherwise, <c>false</c>. The default is <c>false</c>.</value>
+            <remarks>Please refer to <see cref="P:System.Collections.IList.IsReadOnly"/> for details.</remarks>
+        </member>
+        <member name="P:SmtPop.IMimeAttachmentList.Item(System.Int32)">
+            <summary>
+            Gets or sets the <see cref="T:SmtPop.MimeAttachment"/> element at the specified index.
+            </summary>
+            <param name="index">The zero-based index of the
+            <see cref="T:SmtPop.MimeAttachment"/> element to get or set.</param>
+            <value>
+            The <see cref="T:SmtPop.MimeAttachment"/> element at the specified <paramref name="index"/>.
+            </value>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <para><paramref name="index"/> is less than zero.</para>
+            <para>-or-</para>
+            <para><paramref name="index"/> is equal to or greater than
+            <see cref="P:SmtPop.IMimeAttachmentCollection.Count"/>.</para>
+            </exception>
+            <exception cref="T:System.NotSupportedException">
+            The property is set and the <see cref="T:SmtPop.IMimeAttachmentList"/> is read-only.</exception>
+            <remarks>Please refer to <see cref="P:System.Collections.IList.Item(System.Int32)"/> for details.</remarks>
+        </member>
+        <member name="T:SmtPop.IMimeAttachmentEnumerator">
+            <summary>
+            Supports type-safe iteration over a collection that
+            contains <see cref="T:SmtPop.MimeAttachment"/> elements.
+            </summary>
+            <remarks>
+            <b>IMimeAttachmentEnumerator</b> provides an <see cref="T:System.Collections.IEnumerator"/>
+            that is strongly typed for <see cref="T:SmtPop.MimeAttachment"/> elements.
+            </remarks>
+        </member>
+        <member name="M:SmtPop.IMimeAttachmentEnumerator.MoveNext">
+            <summary>
+            Advances the enumerator to the next element of the collection.
+            </summary>
+            <returns><c>true</c> if the enumerator was successfully advanced to the next element;
+            <c>false</c> if the enumerator has passed the end of the collection.</returns>
+            <exception cref="T:System.InvalidOperationException">
+            The collection was modified after the enumerator was created.</exception>
+            <remarks>Please refer to <see cref="M:System.Collections.IEnumerator.MoveNext"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.IMimeAttachmentEnumerator.Reset">
+            <summary>
+            Sets the enumerator to its initial position,
+            which is before the first element in the collection.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">
+            The collection was modified after the enumerator was created.</exception>
+            <remarks>Please refer to <see cref="M:System.Collections.IEnumerator.Reset"/> for details.</remarks>
+        </member>
+        <member name="P:SmtPop.IMimeAttachmentEnumerator.Current">
+            <summary>
+            Gets the current <see cref="T:SmtPop.MimeAttachment"/> element in the collection.
+            </summary>
+            <value>The current <see cref="T:SmtPop.MimeAttachment"/> element in the collection.</value>
+            <exception cref="T:System.InvalidOperationException"><para>The enumerator is positioned
+            before the first element of the collection or after the last element.</para>
+            <para>-or-</para>
+            <para>The collection was modified after the enumerator was created.</para></exception>
+            <remarks>Please refer to <see cref="P:System.Collections.IEnumerator.Current"/> for details, but note
+            that <b>Current</b> fails if the collection was modified since the last successful
+            call to <see cref="M:SmtPop.IMimeAttachmentEnumerator.MoveNext"/> or <see cref="M:SmtPop.IMimeAttachmentEnumerator.Reset"/>.</remarks>
+        </member>
+        <member name="T:SmtPop.MimeAttachmentList">
+            <summary>
+            Implements a strongly typed collection of <see cref="T:SmtPop.MimeAttachment"/> elements.
+            </summary>
+            <remarks><para>
+            <b>MimeAttachmentList</b> provides an <see cref="T:System.Collections.ArrayList"/>
+            that is strongly typed for <see cref="T:SmtPop.MimeAttachment"/> elements.
+            </para></remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.#ctor">
+            <overloads>
+            Initializes a new instance of the <see cref="T:SmtPop.MimeAttachmentList"/> class.
+            </overloads>
+            <summary>
+            Initializes a new instance of the <see cref="T:SmtPop.MimeAttachmentList"/> class
+            that is empty and has the default initial capacity.
+            </summary>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.#ctor"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmtPop.MimeAttachmentList"/> class
+            that is empty and has the specified initial capacity.
+            </summary>
+            <param name="capacity">The number of elements that the new
+            <see cref="T:SmtPop.MimeAttachmentList"/> is initially capable of storing.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="capacity"/> is less than zero.</exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.#ctor(System.Int32)"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.#ctor(SmtPop.MimeAttachmentList)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmtPop.MimeAttachmentList"/> class
+            that contains elements copied from the specified collection and
+            that has the same initial capacity as the number of elements copied.
+            </summary>
+            <param name="collection">The <see cref="T:SmtPop.MimeAttachmentList"/>
+            whose elements are copied to the new collection.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="collection"/> is a null reference.</exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.#ctor(System.Collections.ICollection)"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.#ctor(SmtPop.MimeAttachment[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmtPop.MimeAttachmentList"/> class
+            that contains elements copied from the specified <see cref="T:SmtPop.MimeAttachment"/>
+            array and that has the same initial capacity as the number of elements copied.
+            </summary>
+            <param name="array">An <see cref="T:System.Array"/> of <see cref="T:SmtPop.MimeAttachment"/>
+            elements that are copied to the new collection.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="array"/> is a null reference.</exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.#ctor(System.Collections.ICollection)"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.Add(SmtPop.MimeAttachment)">
+            <summary>
+            Adds a <see cref="T:SmtPop.MimeAttachment"/> to the end of the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            </summary>
+            <param name="value">The <see cref="T:SmtPop.MimeAttachment"/> object
+            to be added to the end of the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            This argument can be a null reference.
+            </param>
+            <returns>The <see cref="T:SmtPop.MimeAttachmentList"/> index at which the
+            <paramref name="value"/> has been added.</returns>
+            <exception cref="T:System.NotSupportedException">
+            <para>The <see cref="T:SmtPop.MimeAttachmentList"/> is read-only.</para>
+            <para>-or-</para>
+            <para>The <b>MimeAttachmentList</b> has a fixed size.</para>
+            <para>-or-</para>
+            <para>The <b>MimeAttachmentList</b> already contains the specified
+            <paramref name="value"/>, and the <b>MimeAttachmentList</b>
+            ensures that all elements are unique.</para></exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.Add(System.Object)"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.System#Collections#IList#Add(System.Object)">
+            <summary>
+            Adds an <see cref="T:System.Object"/> to the end of the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            </summary>
+            <param name="value">
+            The object to be added to the end of the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            This argument must be compatible with <see cref="T:SmtPop.MimeAttachment"/>.
+            This argument can be a null reference.
+            </param>
+            <returns>The <see cref="T:SmtPop.MimeAttachmentList"/> index at which the
+            <paramref name="value"/> has been added.</returns>
+            <exception cref="T:System.InvalidCastException"><paramref name="value"/>
+            is not compatible with <see cref="T:SmtPop.MimeAttachment"/>.</exception>
+            <exception cref="T:System.NotSupportedException">
+            <para>The <see cref="T:SmtPop.MimeAttachmentList"/> is read-only.</para>
+            <para>-or-</para>
+            <para>The <b>MimeAttachmentList</b> has a fixed size.</para>
+            <para>-or-</para>
+            <para>The <b>MimeAttachmentList</b> already contains the specified
+            <paramref name="value"/>, and the <b>MimeAttachmentList</b>
+            ensures that all elements are unique.</para></exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.Add(System.Object)"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.AddRange(SmtPop.MimeAttachmentList)">
+            <overloads>
+            Adds a range of elements to the end of the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            </overloads>
+            <summary>
+            Adds the elements of another collection to the end of the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            </summary>
+            <param name="collection">The <see cref="T:SmtPop.MimeAttachmentList"/> whose elements
+            should be added to the end of the current collection.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="collection"/> is a null reference.</exception>
+            <exception cref="T:System.NotSupportedException">
+            <para>The <see cref="T:SmtPop.MimeAttachmentList"/> is read-only.</para>
+            <para>-or-</para>
+            <para>The <b>MimeAttachmentList</b> has a fixed size.</para>
+            <para>-or-</para>
+            <para>The <b>MimeAttachmentList</b> already contains one or more elements
+            in the specified <paramref name="collection"/>, and the <b>MimeAttachmentList</b>
+            ensures that all elements are unique.</para></exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.AddRange(System.Collections.ICollection)"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.AddRange(SmtPop.MimeAttachment[])">
+            <summary>
+            Adds the elements of a <see cref="T:SmtPop.MimeAttachment"/> array
+            to the end of the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            </summary>
+            <param name="array">An <see cref="T:System.Array"/> of <see cref="T:SmtPop.MimeAttachment"/> elements
+            that should be added to the end of the <see cref="T:SmtPop.MimeAttachmentList"/>.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="array"/> is a null reference.</exception>
+            <exception cref="T:System.NotSupportedException">
+            <para>The <see cref="T:SmtPop.MimeAttachmentList"/> is read-only.</para>
+            <para>-or-</para>
+            <para>The <b>MimeAttachmentList</b> has a fixed size.</para>
+            <para>-or-</para>
+            <para>The <b>MimeAttachmentList</b> already contains one or more elements
+            in the specified <paramref name="array"/>, and the <b>MimeAttachmentList</b>
+            ensures that all elements are unique.</para></exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.AddRange(System.Collections.ICollection)"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.BinarySearch(SmtPop.MimeAttachment)">
+            <summary>
+            Searches the entire sorted <see cref="T:SmtPop.MimeAttachmentList"/> for an
+            <see cref="T:SmtPop.MimeAttachment"/> element using the default comparer
+            and returns the zero-based index of the element.
+            </summary>
+            <param name="value">The <see cref="T:SmtPop.MimeAttachment"/> object
+            to locate in the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            This argument can be a null reference.
+            </param>
+            <returns>The zero-based index of <paramref name="value"/> in the sorted
+            <see cref="T:SmtPop.MimeAttachmentList"/>, if <paramref name="value"/> is found;
+            otherwise, a negative number, which is the bitwise complement of the index
+            of the next element that is larger than <paramref name="value"/> or, if there
+            is no larger element, the bitwise complement of <see cref="P:SmtPop.MimeAttachmentList.Count"/>.</returns>
+            <exception cref="T:System.InvalidOperationException">
+            Neither <paramref name="value"/> nor the elements of the <see cref="T:SmtPop.MimeAttachmentList"/>
+            implement the <see cref="T:System.IComparable"/> interface.</exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.BinarySearch(System.Int32,System.Int32,System.Object,System.Collections.IComparer)"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.Clear">
+            <summary>
+            Removes all elements from the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            </summary>
+            <exception cref="T:System.NotSupportedException">
+            <para>The <see cref="T:SmtPop.MimeAttachmentList"/> is read-only.</para>
+            <para>-or-</para>
+            <para>The <b>MimeAttachmentList</b> has a fixed size.</para></exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.Clear"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.Clone">
+            <summary>
+            Creates a shallow copy of the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            </summary>
+            <returns>A shallow copy of the <see cref="T:SmtPop.MimeAttachmentList"/>.</returns>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.Clone"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.Contains(SmtPop.MimeAttachment)">
+            <summary>
+            Determines whether the <see cref="T:SmtPop.MimeAttachmentList"/>
+            contains the specified <see cref="T:SmtPop.MimeAttachment"/> element.
+            </summary>
+            <param name="value">The <see cref="T:SmtPop.MimeAttachment"/> object
+            to locate in the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            This argument can be a null reference.
+            </param>
+            <returns><c>true</c> if <paramref name="value"/> is found in the
+            <see cref="T:SmtPop.MimeAttachmentList"/>; otherwise, <c>false</c>.</returns>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.Contains(System.Object)"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.System#Collections#IList#Contains(System.Object)">
+            <summary>
+            Determines whether the <see cref="T:SmtPop.MimeAttachmentList"/> contains the specified element.
+            </summary>
+            <param name="value">The object to locate in the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            This argument must be compatible with <see cref="T:SmtPop.MimeAttachment"/>.
+            This argument can be a null reference.
+            </param>
+            <returns><c>true</c> if <paramref name="value"/> is found in the
+            <see cref="T:SmtPop.MimeAttachmentList"/>; otherwise, <c>false</c>.</returns>
+            <exception cref="T:System.InvalidCastException"><paramref name="value"/>
+            is not compatible with <see cref="T:SmtPop.MimeAttachment"/>.</exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.Contains(System.Object)"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.CopyTo(SmtPop.MimeAttachment[])">
+            <overloads>
+            Copies the <see cref="T:SmtPop.MimeAttachmentList"/> or a portion of it to a one-dimensional array.
+            </overloads>
+            <summary>
+            Copies the entire <see cref="T:SmtPop.MimeAttachmentList"/> to a one-dimensional <see cref="T:System.Array"/>
+            of <see cref="T:SmtPop.MimeAttachment"/> elements, starting at the beginning of the target array.
+            </summary>
+            <param name="array">The one-dimensional <see cref="T:System.Array"/> that is the destination of the
+            <see cref="T:SmtPop.MimeAttachment"/> elements copied from the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            The <b>Array</b> must have zero-based indexing.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="array"/> is a null reference.</exception>
+            <exception cref="T:System.ArgumentException">
+            The number of elements in the source <see cref="T:SmtPop.MimeAttachmentList"/> is greater
+            than the available space in the destination <paramref name="array"/>.</exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.CopyTo(System.Array)"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.CopyTo(SmtPop.MimeAttachment[],System.Int32)">
+            <summary>
+            Copies the entire <see cref="T:SmtPop.MimeAttachmentList"/> to a one-dimensional <see cref="T:System.Array"/>
+            of <see cref="T:SmtPop.MimeAttachment"/> elements, starting at the specified index of the target array.
+            </summary>
+            <param name="array">The one-dimensional <see cref="T:System.Array"/> that is the destination of the
+            <see cref="T:SmtPop.MimeAttachment"/> elements copied from the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            The <b>Array</b> must have zero-based indexing.</param>
+            <param name="arrayIndex">The zero-based index in <paramref name="array"/>
+            at which copying begins.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="array"/> is a null reference.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="arrayIndex"/> is less than zero.</exception>
+            <exception cref="T:System.ArgumentException"><para>
+            <paramref name="arrayIndex"/> is equal to or greater than the length of <paramref name="array"/>.
+            </para><para>-or-</para><para>
+            The number of elements in the source <see cref="T:SmtPop.MimeAttachmentList"/> is greater than the
+            available space from <paramref name="arrayIndex"/> to the end of the destination
+            <paramref name="array"/>.</para></exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.CopyTo(System.Array)"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.System#Collections#ICollection#CopyTo(System.Array,System.Int32)">
+            <summary>
+            Copies the entire <see cref="T:SmtPop.MimeAttachmentList"/> to a one-dimensional <see cref="T:System.Array"/>,
+            starting at the specified index of the target array.
+            </summary>
+            <param name="array">The one-dimensional <see cref="T:System.Array"/> that is the destination of the
+            <see cref="T:SmtPop.MimeAttachment"/> elements copied from the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            The <b>Array</b> must have zero-based indexing.</param>
+            <param name="arrayIndex">The zero-based index in <paramref name="array"/>
+            at which copying begins.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="array"/> is a null reference.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="arrayIndex"/> is less than zero.</exception>
+            <exception cref="T:System.ArgumentException"><para>
+            <paramref name="array"/> is multidimensional.
+            </para><para>-or-</para><para>
+            <paramref name="arrayIndex"/> is equal to or greater than the length of <paramref name="array"/>.
+            </para><para>-or-</para><para>
+            The number of elements in the source <see cref="T:SmtPop.MimeAttachmentList"/> is greater than the
+            available space from <paramref name="arrayIndex"/> to the end of the destination
+            <paramref name="array"/>.</para></exception>
+            <exception cref="T:System.InvalidCastException">
+            The <see cref="T:SmtPop.MimeAttachment"/> type cannot be cast automatically
+            to the type of the destination <paramref name="array"/>.</exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.CopyTo(System.Array)"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.GetEnumerator">
+            <summary>
+            Returns an <see cref="T:SmtPop.IMimeAttachmentEnumerator"/> that can
+            iterate through the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            </summary>
+            <returns>An <see cref="T:SmtPop.IMimeAttachmentEnumerator"/>
+            for the entire <see cref="T:SmtPop.MimeAttachmentList"/>.</returns>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.GetEnumerator"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an <see cref="T:System.Collections.IEnumerator"/> that can
+            iterate through the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            </summary>
+            <returns>An <see cref="T:System.Collections.IEnumerator"/>
+            for the entire <see cref="T:SmtPop.MimeAttachmentList"/>.</returns>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.GetEnumerator"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.IndexOf(SmtPop.MimeAttachment)">
+            <summary>
+            Returns the zero-based index of the first occurrence of the specified
+            <see cref="T:SmtPop.MimeAttachment"/> in the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            </summary>
+            <param name="value">The <see cref="T:SmtPop.MimeAttachment"/> object
+            to locate in the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            This argument can be a null reference.
+            </param>
+            <returns>
+            The zero-based index of the first occurrence of <paramref name="value"/>
+            in the <see cref="T:SmtPop.MimeAttachmentList"/>, if found; otherwise, -1.
+            </returns>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.IndexOf(System.Object)"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.System#Collections#IList#IndexOf(System.Object)">
+            <summary>
+            Returns the zero-based index of the first occurrence of the specified
+            <see cref="T:System.Object"/> in the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            </summary>
+            <param name="value">The object to locate in the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            This argument must be compatible with <see cref="T:SmtPop.MimeAttachment"/>.
+            This argument can be a null reference.
+            </param>
+            <returns>
+            The zero-based index of the first occurrence of <paramref name="value"/>
+            in the <see cref="T:SmtPop.MimeAttachmentList"/>, if found; otherwise, -1.
+            </returns>
+            <exception cref="T:System.InvalidCastException"><paramref name="value"/>
+            is not compatible with <see cref="T:SmtPop.MimeAttachment"/>.</exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.IndexOf(System.Object)"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.Insert(System.Int32,SmtPop.MimeAttachment)">
+            <summary>
+            Inserts a <see cref="T:SmtPop.MimeAttachment"/> element into the
+            <see cref="T:SmtPop.MimeAttachmentList"/> at the specified index.
+            </summary>
+            <param name="index">The zero-based index at which <paramref name="value"/>
+            should be inserted.</param>
+            <param name="value">The <see cref="T:SmtPop.MimeAttachment"/> object
+            to insert into the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            This argument can be a null reference.
+            </param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <para><paramref name="index"/> is less than zero.</para>
+            <para>-or-</para>
+            <para><paramref name="index"/> is greater than <see cref="P:SmtPop.MimeAttachmentList.Count"/>.</para>
+            </exception>
+            <exception cref="T:System.NotSupportedException">
+            <para>The <see cref="T:SmtPop.MimeAttachmentList"/> is read-only.</para>
+            <para>-or-</para>
+            <para>The <b>MimeAttachmentList</b> has a fixed size.</para>
+            <para>-or-</para>
+            <para>The <b>MimeAttachmentList</b> already contains the specified
+            <paramref name="value"/>, and the <b>MimeAttachmentList</b>
+            ensures that all elements are unique.</para></exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.Insert(System.Int32,System.Object)"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.System#Collections#IList#Insert(System.Int32,System.Object)">
+            <summary>
+            Inserts an element into the <see cref="T:SmtPop.MimeAttachmentList"/> at the specified index.
+            </summary>
+            <param name="index">The zero-based index at which <paramref name="value"/>
+            should be inserted.</param>
+            <param name="value">The object to insert into the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            This argument must be compatible with <see cref="T:SmtPop.MimeAttachment"/>.
+            This argument can be a null reference.
+            </param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <para><paramref name="index"/> is less than zero.</para>
+            <para>-or-</para>
+            <para><paramref name="index"/> is greater than <see cref="P:SmtPop.MimeAttachmentList.Count"/>.</para>
+            </exception>
+            <exception cref="T:System.InvalidCastException"><paramref name="value"/>
+            is not compatible with <see cref="T:SmtPop.MimeAttachment"/>.</exception>
+            <exception cref="T:System.NotSupportedException">
+            <para>The <see cref="T:SmtPop.MimeAttachmentList"/> is read-only.</para>
+            <para>-or-</para>
+            <para>The <b>MimeAttachmentList</b> has a fixed size.</para>
+            <para>-or-</para>
+            <para>The <b>MimeAttachmentList</b> already contains the specified
+            <paramref name="value"/>, and the <b>MimeAttachmentList</b>
+            ensures that all elements are unique.</para></exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.Insert(System.Int32,System.Object)"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.ReadOnly(SmtPop.MimeAttachmentList)">
+            <summary>
+            Returns a read-only wrapper for the specified <see cref="T:SmtPop.MimeAttachmentList"/>.
+            </summary>
+            <param name="collection">The <see cref="T:SmtPop.MimeAttachmentList"/> to wrap.</param>
+            <returns>A read-only wrapper around <paramref name="collection"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="collection"/> is a null reference.</exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.ReadOnly(System.Collections.IList)"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.Remove(SmtPop.MimeAttachment)">
+            <summary>
+            Removes the first occurrence of the specified <see cref="T:SmtPop.MimeAttachment"/>
+            from the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            </summary>
+            <param name="value">The <see cref="T:SmtPop.MimeAttachment"/> object
+            to remove from the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            This argument can be a null reference.
+            </param>
+            <exception cref="T:System.NotSupportedException">
+            <para>The <see cref="T:SmtPop.MimeAttachmentList"/> is read-only.</para>
+            <para>-or-</para>
+            <para>The <b>MimeAttachmentList</b> has a fixed size.</para></exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.Remove(System.Object)"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.System#Collections#IList#Remove(System.Object)">
+            <summary>
+            Removes the first occurrence of the specified <see cref="T:System.Object"/>
+            from the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            </summary>
+            <param name="value">The object to remove from the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            This argument must be compatible with <see cref="T:SmtPop.MimeAttachment"/>.
+            This argument can be a null reference.
+            </param>
+            <exception cref="T:System.InvalidCastException"><paramref name="value"/>
+            is not compatible with <see cref="T:SmtPop.MimeAttachment"/>.</exception>
+            <exception cref="T:System.NotSupportedException">
+            <para>The <see cref="T:SmtPop.MimeAttachmentList"/> is read-only.</para>
+            <para>-or-</para>
+            <para>The <b>MimeAttachmentList</b> has a fixed size.</para></exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.Remove(System.Object)"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.RemoveAt(System.Int32)">
+            <summary>
+            Removes the element at the specified index of the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            </summary>
+            <param name="index">The zero-based index of the element to remove.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <para><paramref name="index"/> is less than zero.</para>
+            <para>-or-</para>
+            <para><paramref name="index"/> is equal to or greater than <see cref="P:SmtPop.MimeAttachmentList.Count"/>.</para>
+            </exception>
+            <exception cref="T:System.NotSupportedException">
+            <para>The <see cref="T:SmtPop.MimeAttachmentList"/> is read-only.</para>
+            <para>-or-</para>
+            <para>The <b>MimeAttachmentList</b> has a fixed size.</para></exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.RemoveAt(System.Int32)"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.RemoveRange(System.Int32,System.Int32)">
+            <summary>
+            Removes the specified range of elements from the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            </summary>
+            <param name="index">The zero-based starting index of the range
+            of elements to remove.</param>
+            <param name="count">The number of elements to remove.</param>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="index"/> and <paramref name="count"/> do not denote a
+            valid range of elements in the <see cref="T:SmtPop.MimeAttachmentList"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <para><paramref name="index"/> is less than zero.</para>
+            <para>-or-</para>
+            <para><paramref name="count"/> is less than zero.</para>
+            </exception>
+            <exception cref="T:System.NotSupportedException">
+            <para>The <see cref="T:SmtPop.MimeAttachmentList"/> is read-only.</para>
+            <para>-or-</para>
+            <para>The <b>MimeAttachmentList</b> has a fixed size.</para></exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.RemoveRange(System.Int32,System.Int32)"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.Reverse">
+            <overloads>
+            Reverses the order of the elements in the 
+            <see cref="T:SmtPop.MimeAttachmentList"/> or a portion of it.
+            </overloads>
+            <summary>
+            Reverses the order of the elements in the entire <see cref="T:SmtPop.MimeAttachmentList"/>.
+            </summary>
+            <exception cref="T:System.NotSupportedException">
+            The <see cref="T:SmtPop.MimeAttachmentList"/> is read-only.</exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.Reverse"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.Reverse(System.Int32,System.Int32)">
+            <summary>
+            Reverses the order of the elements in the specified range.
+            </summary>
+            <param name="index">The zero-based starting index of the range
+            of elements to reverse.</param>
+            <param name="count">The number of elements to reverse.</param>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="index"/> and <paramref name="count"/> do not denote a
+            valid range of elements in the <see cref="T:SmtPop.MimeAttachmentList"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <para><paramref name="index"/> is less than zero.</para>
+            <para>-or-</para>
+            <para><paramref name="count"/> is less than zero.</para>
+            </exception>
+            <exception cref="T:System.NotSupportedException">
+            The <see cref="T:SmtPop.MimeAttachmentList"/> is read-only.</exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.Reverse"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.Sort">
+            <overloads>
+            Sorts the elements in the <see cref="T:SmtPop.MimeAttachmentList"/> or a portion of it.
+            </overloads>
+            <summary>
+            Sorts the elements in the entire <see cref="T:SmtPop.MimeAttachmentList"/>
+            using the <see cref="T:System.IComparable"/> implementation of each element.
+            </summary>
+            <exception cref="T:System.NotSupportedException">
+            The <see cref="T:SmtPop.MimeAttachmentList"/> is read-only.</exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.Sort"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.Sort(System.Collections.IComparer)">
+            <summary>
+            Sorts the elements in the entire <see cref="T:SmtPop.MimeAttachmentList"/>
+            using the specified <see cref="T:System.Collections.IComparer"/> interface.
+            </summary>
+            <param name="comparer">
+            <para>The <see cref="T:System.Collections.IComparer"/> implementation to use when comparing elements.</para>
+            <para>-or-</para>
+            <para>A null reference to use the <see cref="T:System.IComparable"/> implementation 
+            of each element.</para></param>
+            <exception cref="T:System.NotSupportedException">
+            The <see cref="T:SmtPop.MimeAttachmentList"/> is read-only.</exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.Sort"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.Sort(System.Int32,System.Int32,System.Collections.IComparer)">
+            <summary>
+            Sorts the elements in the specified range 
+            using the specified <see cref="T:System.Collections.IComparer"/> interface.
+            </summary>
+            <param name="index">The zero-based starting index of the range
+            of elements to sort.</param>
+            <param name="count">The number of elements to sort.</param>
+            <param name="comparer">
+            <para>The <see cref="T:System.Collections.IComparer"/> implementation to use when comparing elements.</para>
+            <para>-or-</para>
+            <para>A null reference to use the <see cref="T:System.IComparable"/> implementation 
+            of each element.</para></param>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="index"/> and <paramref name="count"/> do not denote a
+            valid range of elements in the <see cref="T:SmtPop.MimeAttachmentList"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <para><paramref name="index"/> is less than zero.</para>
+            <para>-or-</para>
+            <para><paramref name="count"/> is less than zero.</para>
+            </exception>
+            <exception cref="T:System.NotSupportedException">
+            The <see cref="T:SmtPop.MimeAttachmentList"/> is read-only.</exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.Sort"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.Synchronized(SmtPop.MimeAttachmentList)">
+            <summary>
+            Returns a synchronized (thread-safe) wrapper
+            for the specified <see cref="T:SmtPop.MimeAttachmentList"/>.
+            </summary>
+            <param name="collection">The <see cref="T:SmtPop.MimeAttachmentList"/> to synchronize.</param>
+            <returns>
+            A synchronized (thread-safe) wrapper around <paramref name="collection"/>.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="collection"/> is a null reference.</exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.Synchronized(System.Collections.IList)"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.ToArray">
+            <summary>
+            Copies the elements of the <see cref="T:SmtPop.MimeAttachmentList"/> to a new
+            <see cref="T:System.Array"/> of <see cref="T:SmtPop.MimeAttachment"/> elements.
+            </summary>
+            <returns>A one-dimensional <see cref="T:System.Array"/> of <see cref="T:SmtPop.MimeAttachment"/>
+            elements containing copies of the elements of the <see cref="T:SmtPop.MimeAttachmentList"/>.</returns>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.ToArray"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.TrimToSize">
+            <summary>
+            Sets the capacity to the actual number of elements in the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            </summary>
+            <exception cref="T:System.NotSupportedException">
+            <para>The <see cref="T:SmtPop.MimeAttachmentList"/> is read-only.</para>
+            <para>-or-</para>
+            <para>The <b>MimeAttachmentList</b> has a fixed size.</para></exception>
+            <remarks>Please refer to <see cref="M:System.Collections.ArrayList.TrimToSize"/> for details.</remarks>
+        </member>
+        <member name="M:SmtPop.MimeAttachmentList.Unique(SmtPop.MimeAttachmentList)">
+            <summary>
+            Returns a wrapper for the specified <see cref="T:SmtPop.MimeAttachmentList"/>
+            ensuring that all elements are unique.
+            </summary>
+            <param name="collection">The <see cref="T:SmtPop.MimeAttachmentList"/> to wrap.</param>    
+            <returns>
+            A wrapper around <paramref name="collection"/> ensuring that all elements are unique.
+            </returns>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="collection"/> contains duplicate elements.</exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="collection"/> is a null reference.</exception>
+            <remarks><para>
+            The <b>Unique</b> wrapper provides a set-like collection by ensuring
+            that all elements in the <see cref="T:SmtPop.MimeAttachmentList"/> are unique.
+            </para><para>
+            <b>Unique</b> raises an <see cref="T:System.ArgumentException"/> if the specified 
+            <paramref name="collection"/> contains any duplicate elements. The returned
+            wrapper raises a <see cref="T:System.NotSupportedException"/> whenever the user attempts 
+            to add an element that is already contained in the <b>MimeAttachmentList</b>.
+            </para><para>
+            <strong>Note:</strong> The <b>Unique</b> wrapper reflects any changes made
+            to the underlying <paramref name="collection"/>, including the possible
+            creation of duplicate elements. The uniqueness of all elements is therefore
+            no longer assured if the underlying collection is manipulated directly.
+            </para></remarks>
+        </member>
+        <member name="P:SmtPop.MimeAttachmentList.InnerArray">
+            <summary>
+            Gets the list of elements contained in the <see cref="T:SmtPop.MimeAttachmentList"/> instance.
+            </summary>
+            <value>
+            A one-dimensional <see cref="T:System.Array"/> with zero-based indexing that contains all 
+            <see cref="T:SmtPop.MimeAttachment"/> elements in the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            </value>
+            <remarks>
+            Use <b>InnerArray</b> to access the element array of a <see cref="T:SmtPop.MimeAttachmentList"/>
+            instance that might be a read-only or synchronized wrapper. This is necessary because
+            the element array field of wrapper classes is always a null reference.
+            </remarks>
+        </member>
+        <member name="P:SmtPop.MimeAttachmentList.Capacity">
+            <summary>
+            Gets or sets the capacity of the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            </summary>
+            <value>The number of elements that the
+            <see cref="T:SmtPop.MimeAttachmentList"/> can contain.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <b>Capacity</b> is set to a value that is less than <see cref="P:SmtPop.MimeAttachmentList.Count"/>.</exception>
+            <remarks>Please refer to <see cref="P:System.Collections.ArrayList.Capacity"/> for details.</remarks>
+        </member>
+        <member name="P:SmtPop.MimeAttachmentList.Count">
+            <summary>
+            Gets the number of elements contained in the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            </summary>
+            <value>
+            The number of elements contained in the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            </value>
+            <remarks>Please refer to <see cref="P:System.Collections.ArrayList.Count"/> for details.</remarks>
+        </member>
+        <member name="P:SmtPop.MimeAttachmentList.IsFixedSize">
+            <summary>
+            Gets a value indicating whether the <see cref="T:SmtPop.MimeAttachmentList"/> has a fixed size.
+            </summary>
+            <value><c>true</c> if the <see cref="T:SmtPop.MimeAttachmentList"/> has a fixed size;
+            otherwise, <c>false</c>. The default is <c>false</c>.</value>
+            <remarks>Please refer to <see cref="P:System.Collections.ArrayList.IsFixedSize"/> for details.</remarks>
+        </member>
+        <member name="P:SmtPop.MimeAttachmentList.IsReadOnly">
+            <summary>
+            Gets a value indicating whether the <see cref="T:SmtPop.MimeAttachmentList"/> is read-only.
+            </summary>
+            <value><c>true</c> if the <see cref="T:SmtPop.MimeAttachmentList"/> is read-only;
+            otherwise, <c>false</c>. The default is <c>false</c>.</value>
+            <remarks>Please refer to <see cref="P:System.Collections.ArrayList.IsReadOnly"/> for details.</remarks>
+        </member>
+        <member name="P:SmtPop.MimeAttachmentList.IsSynchronized">
+            <summary>
+            Gets a value indicating whether access to the <see cref="T:SmtPop.MimeAttachmentList"/>
+            is synchronized (thread-safe).
+            </summary>
+            <value><c>true</c> if access to the <see cref="T:SmtPop.MimeAttachmentList"/> is
+            synchronized (thread-safe); otherwise, <c>false</c>. The default is <c>false</c>.</value>
+            <remarks>Please refer to <see cref="P:System.Collections.ArrayList.IsSynchronized"/> for details.</remarks>
+        </member>
+        <member name="P:SmtPop.MimeAttachmentList.IsUnique">
+            <summary>
+            Gets a value indicating whether the <see cref="T:SmtPop.MimeAttachmentList"/> 
+            ensures that all elements are unique.
+            </summary>
+            <value>
+            <c>true</c> if the <see cref="T:SmtPop.MimeAttachmentList"/> ensures that all 
+            elements are unique; otherwise, <c>false</c>. The default is <c>false</c>.
+            </value>
+            <remarks>
+            <b>IsUnique</b> returns <c>true</c> exactly if the <see cref="T:SmtPop.MimeAttachmentList"/>
+            is exposed through a <see cref="M:SmtPop.MimeAttachmentList.Unique(SmtPop.MimeAttachmentList)"/> wrapper. 
+            Please refer to <see cref="M:SmtPop.MimeAttachmentList.Unique(SmtPop.MimeAttachmentList)"/> for details.
+            </remarks>
+        </member>
+        <member name="P:SmtPop.MimeAttachmentList.Item(System.Int32)">
+            <summary>
+            Gets or sets the <see cref="T:SmtPop.MimeAttachment"/> element at the specified index.
+            </summary>
+            <param name="index">The zero-based index of the
+            <see cref="T:SmtPop.MimeAttachment"/> element to get or set.</param>
+            <value>
+            The <see cref="T:SmtPop.MimeAttachment"/> element at the specified <paramref name="index"/>.
+            </value>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <para><paramref name="index"/> is less than zero.</para>
+            <para>-or-</para>
+            <para><paramref name="index"/> is equal to or greater than <see cref="P:SmtPop.MimeAttachmentList.Count"/>.</para>
+            </exception>
+            <exception cref="T:System.NotSupportedException"><para>
+            The property is set and the <see cref="T:SmtPop.MimeAttachmentList"/> is read-only.
+            </para><para>-or-</para><para>
+            The property is set, the <b>MimeAttachmentList</b> already contains the
+            specified element at a different index, and the <b>MimeAttachmentList</b>
+            ensures that all elements are unique.</para></exception>
+            <remarks>Please refer to <see cref="P:System.Collections.ArrayList.Item(System.Int32)"/> for details.</remarks>
+        </member>
+        <member name="P:SmtPop.MimeAttachmentList.System#Collections#IList#Item(System.Int32)">
+            <summary>
+            Gets or sets the element at the specified index.
+            </summary>
+            <param name="index">The zero-based index of the element to get or set.</param>
+            <value>
+            The element at the specified <paramref name="index"/>. When the property
+            is set, this value must be compatible with <see cref="T:SmtPop.MimeAttachment"/>.
+            </value>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <para><paramref name="index"/> is less than zero.</para>
+            <para>-or-</para>
+            <para><paramref name="index"/> is equal to or greater than <see cref="P:SmtPop.MimeAttachmentList.Count"/>.</para>
+            </exception>
+            <exception cref="T:System.InvalidCastException">The property is set to a value
+            that is not compatible with <see cref="T:SmtPop.MimeAttachment"/>.</exception>
+            <exception cref="T:System.NotSupportedException"><para>
+            The property is set and the <see cref="T:SmtPop.MimeAttachmentList"/> is read-only.
+            </para><para>-or-</para><para>
+            The property is set, the <b>MimeAttachmentList</b> already contains the
+            specified element at a different index, and the <b>MimeAttachmentList</b>
+            ensures that all elements are unique.</para></exception>
+            <remarks>Please refer to <see cref="P:System.Collections.ArrayList.Item(System.Int32)"/> for details.</remarks>
+        </member>
+        <member name="P:SmtPop.MimeAttachmentList.SyncRoot">
+            <summary>
+            Gets an object that can be used to synchronize
+            access to the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            </summary>
+            <value>An object that can be used to synchronize
+            access to the <see cref="T:SmtPop.MimeAttachmentList"/>.
+            </value>
+            <remarks>Please refer to <see cref="P:System.Collections.ArrayList.SyncRoot"/> for details.</remarks>
+        </member>
+        <member name="T:SmtPop.MimeTransferEncoding">
+            <summary>
+            Transfer encoding enumeration
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeTransferEncoding.Ascii7Bit">
+            <summary>
+            7 Bits text
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeTransferEncoding.QuotedPrintable">
+            <summary>
+            Text encoded in quoted printable
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeTransferEncoding.Base64">
+            <summary>
+            Text or binary encoded in base64
+            </summary>
+        </member>
+        <member name="T:SmtPop.MimeTextContentType">
+            <summary>
+            Text type enumeration
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeTextContentType.TextPlain">
+            <summary>
+            Plain text
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeTextContentType.TextHtml">
+            <summary>
+            Html encoded text
+            </summary>
+        </member>
+        <member name="T:SmtPop.MimeConstant">
+            <summary>
+            A class to deal with various Mime constant
+            </summary>
+            <remarks>Private constructor. All methods are static</remarks>
+        </member>
+        <member name="M:SmtPop.MimeConstant.#ctor">
+            <summary>
+            Constructor
+            </summary>
+            <remarks>Private constructor. All methods are static</remarks>
+        </member>
+        <member name="M:SmtPop.MimeConstant.GetContentTypeId(SmtPop.MimeTextContentType)">
+            <summary>
+            Returns a string identifying a Mime text type
+            </summary>
+            <param name="type">A text type</param>
+            <returns>A string identifying the Mime text type</returns>
+        </member>
+        <member name="M:SmtPop.MimeConstant.GetTransferEncodingId(SmtPop.MimeTransferEncoding)">
+            <summary>
+            Returns a string identifying a Mime transfer encoding
+            </summary>
+            <param name="encoding">A Mime transfer encoding</param>
+            <returns>A string identifying the Mime transfer encoding</returns>
+        </member>
+        <member name="T:SmtPop.MimeDecoder">
+            <summary>
+            Provide decoder for unicode string
+            </summary>
+        </member>
+        <member name="M:SmtPop.MimeDecoder.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SmtPop.MimeDecoder.IsoString(System.Byte[])">
+            <summary>
+            Converts iso-8859-1 buffer into a string
+            </summary>
+            <param name="src">A buffer containing iso-8859-1 char</param>
+            <returns>A string </returns>
+        </member>
+        <member name="M:SmtPop.MimeDecoder.UsString(System.Byte[])">
+            <summary>
+            Converts us-ascii buffer into a string
+            </summary>
+            <param name="src">A buffer containing us-ascii char</param>
+            <returns>A string</returns>
+        </member>
+        <member name="M:SmtPop.MimeDecoder.Utf8String(System.Byte[])">
+            <summary>
+            Converts utf-8 buffer into a string
+            </summary>
+            <param name="src">A buffer containing utf8 char</param>
+            <returns>A string</returns>
+        </member>
+        <member name="T:SmtPop.MimeEncoder">
+            <summary>
+            Provide encoder for unicode string
+            </summary>
+        </member>
+        <member name="M:SmtPop.MimeEncoder.#ctor">
+            <summary>
+            Constructs an encoder instance
+            </summary>
+        </member>
+        <member name="M:SmtPop.MimeEncoder.StringBase64(System.String,System.Text.Encoding,System.Int32)">
+             <summary>
+             Converts a string into base 64 using the specified charset
+             </summary>
+             <param name="Src">The string to encode</param>
+             <param name="Encoding">The charset of the string to encode</param>
+             <param name="MaxLineLength">Maximum line lengh in base64 code</param>
+             <returns>A string containing the base64 code for "src"</returns>
+             <example>
+             <code>
+             StringBase64 (Src, System.Text.Encoding.Default, 78);
+             </code>
+            </example>
+        </member>
+        <member name="M:SmtPop.MimeEncoder.ByteBase64(System.Byte[],System.Int32)">
+            <summary>
+            Converts an array of byte in Base64. 
+            </summary>
+            <param name="buf">Array of byte to encode</param>
+            <param name="MaxLineLength">Maximum length of a line in Base64</param>
+            <returns>A string containing the base64 code for "buf"</returns>
+        </member>
+        <member name="T:SmtPop.MimeException">
+            <summary>
+            Mime exception
+            </summary>
+        </member>
+        <member name="M:SmtPop.MimeException.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="err">
+            A string containing the exception details
+            </param>
+        </member>
+        <member name="T:SmtPop.MimeField">
+            <summary>
+            A mime header field
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeField.m_name">
+            <summary>
+            The field name (ie "subject" or "received")
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeField.m_value">
+            <summary>
+            The value of the field. 
+            </summary>
+        </member>
+        <member name="M:SmtPop.MimeField.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SmtPop.MimeField.#ctor(System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="Name">The field name</param>
+            <param name="Val">The field value</param>
+        </member>
+        <member name="P:SmtPop.MimeField.Value">
+            <summary>
+            The value of field.
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeField.Name">
+            <summary>
+            The field name (ie "subject", "received"
+            </summary>
+        </member>
+        <member name="T:SmtPop.MimeFieldList">
+            <summary>
+            Handle a list of MimeField
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeFieldList.m_data">
+            <summary>
+            The MimeField Collection
+            </summary>
+        </member>
+        <member name="M:SmtPop.MimeFieldList.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SmtPop.MimeFieldList.Add(SmtPop.MimeField)">
+            <summary>
+            Add a field to the Mime header
+            </summary>
+            <param name="field">The field name and value</param>
+        </member>
+        <member name="M:SmtPop.MimeFieldList.Add(System.String,System.String)">
+            <summary>
+            Add a field to the Mime header
+            </summary>
+            <param name="Name">The field name (ie 'subject:')</param>
+            <param name="Value">The field value</param>
+        </member>
+        <member name="M:SmtPop.MimeFieldList.Update(System.String,System.String)">
+            <summary>
+            Update a field value
+            </summary>
+            <param name="Name">The field name</param>
+            <param name="Value">The new value of the field</param>
+        </member>
+        <member name="M:SmtPop.MimeFieldList.FindField(System.String)">
+            <summary>
+            Searches for a field in the header
+            </summary>
+            <param name="Name">The searched field name</param>
+            <returns>The index of the field</returns>
+        </member>
+        <member name="M:SmtPop.MimeFieldList.FindField(System.String,System.Int32)">
+            <summary>
+            Find the n'th occurency of the field named 'Name'
+            </summary>
+            <param name="Name">The field name</param>
+            <param name="n">The occurency of the field</param>
+            <returns>The index of the field</returns>
+            <example>
+            Search for 'received' fields
+            <code>
+            int n = FieldCount (\"received\");
+            for (int i = 0; i &lt; n; i++)
+            	FindField ("received", n);
+            </code>
+            </example>
+        </member>
+        <member name="M:SmtPop.MimeFieldList.FieldCount(System.String)">
+            <summary>
+            Counts the number of occurence of a particular field
+            </summary>
+            <param name="Name">The field name</param>
+            <returns>The number of field 'Name' in the header</returns>
+            <remarks>This is useful for some fields like 'receive'</remarks>
+        </member>
+        <member name="M:SmtPop.MimeFieldList.FieldExist(System.String)">
+            <summary>
+            Searches if a field exists in the header
+            </summary>
+            <param name="Name">The field name</param>
+            <returns>true if the field exist. Otherwise false</returns>
+        </member>
+        <member name="M:SmtPop.MimeFieldList.RemoveAt(System.Int32)">
+            <summary>
+            See IList interface
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:SmtPop.MimeFieldList.Insert(System.Int32,System.Object)">
+            <summary>
+            See IList interface
+            </summary>
+            <param name="index">See IList interface</param>
+            <param name="value">See IList interface</param>
+        </member>
+        <member name="M:SmtPop.MimeFieldList.Remove(System.Object)">
+            <summary>
+            See IList interface
+            </summary>
+            <param name="value">See IList interface</param>
+        </member>
+        <member name="M:SmtPop.MimeFieldList.Contains(System.Object)">
+            <summary>
+            See IList interface
+            </summary>
+            <param name="value">See IList interface</param>
+            <returns></returns>
+        </member>
+        <member name="M:SmtPop.MimeFieldList.Clear">
+            <summary>
+            See IList interface
+            </summary>
+        </member>
+        <member name="M:SmtPop.MimeFieldList.IndexOf(System.Object)">
+            <summary>
+            See IList interface
+            </summary>
+            <param name="value">See IList interface</param>
+            <returns>See IList interface</returns>
+        </member>
+        <member name="M:SmtPop.MimeFieldList.System#Collections#IList#Add(System.Object)">
+            <summary>
+            See IList interface
+            </summary>
+            <param name="value">See IList interface</param>
+            <returns>See IList interface</returns>
+        </member>
+        <member name="M:SmtPop.MimeFieldList.CopyTo(System.Array,System.Int32)">
+            <summary>
+            See ICollection interface
+            </summary>
+            <param name="array">See ICollection interface</param>
+            <param name="index">See ICollection interface</param>
+        </member>
+        <member name="M:SmtPop.MimeFieldList.GetEnumerator">
+            <summary>
+            See IEnumerable interface
+            </summary>
+            <returns>See IEnumerable interface</returns>
+        </member>
+        <member name="P:SmtPop.MimeFieldList.Item(System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeFieldList.Item(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeFieldList.IsReadOnly">
+            <summary>
+            See Ilist interface
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeFieldList.System#Collections#IList#Item(System.Int32)">
+            <summary>
+            See Ilist interface
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeFieldList.IsFixedSize">
+            <summary>
+            See IList interface
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeFieldList.IsSynchronized">
+            <summary>
+            See ICollection interface
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeFieldList.Count">
+            <summary>
+            See ICollection interface
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeFieldList.SyncRoot">
+            <summary>
+            See ICollection interface
+            </summary>
+        </member>
+        <member name="T:SmtPop.MimeMessage">
+             <summary>
+             An RFC822 MimeMessage
+             </summary>
+             <example>
+             This short sample send a mail in 7bit text
+             <code>
+             public void SendSimpleMail()
+             {
+            		string body = "This is a simple message for test";
+            		string subject = "A simple message for test";
+            
+            			
+            		MimeMessage msg = new MimeMessage ();
+            			
+            		// build the address source and destination
+            		MailAddressList from = new MailAddressList ();
+            		from.Add (new MailAddress ("toto" ,"toto@toto.com"));
+            		msg.AddressFrom = from;
+            			
+            		MailAddressList to = new MailAddressList ();
+            		to.Add (new MailAddress (TestConstant.toadr));
+            		msg.AddressTo = to;
+            			
+            		msg.SaveAdr ();
+            			
+            		// build message
+            		msg.SetSubject (subject, MimeTransferEncoding.Ascii7Bit);
+            		msg.SetBody (body, MimeTransferEncoding.Ascii7Bit, MimeTextContentType.TextPlain);
+            
+            		// send message
+            		SMTPClient smtp = new SMTPClient (TestConstant.host, TestConstant.portsmtp);
+            		smtp.Open ();
+            		smtp.SendMail (msg);
+            		smtp.Close ();
+            			
+            }
+            </code>
+             </example>
+        </member>
+        <member name="F:SmtPop.MimeMessage.m_attachments">
+            <summary>
+            The message attachments
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeMessage.m_last_attachment">
+            <summary>
+            Current attachment
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeMessage.m_lines_treated">
+            <summary>
+            The number of lines decoded
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeMessage.m_last_field">
+            <summary>
+            last header field decoded
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeMessage.m_multipart">
+            <summary>
+            Multipart flag
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeMessage.m_boundary">
+            <summary>
+            The "boundary" string (see multipart/mixed)
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeMessage.m_state">
+            <summary>
+            Current decoder state
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeMessage.m_header">
+            <summary>
+            The header source
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeMessage.m_headerBuilder">
+            <summary>
+            A temporary string builder to build header string
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeMessage.m_body">
+            <summary>
+            body source
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeMessage.m_bodyBuilder">
+            <summary>
+            A temporary string builder to build body string
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeMessage.m_headers">
+            <summary>
+            The message headers
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeMessage.m_address_from">
+            
+            
+            <summary>
+            The from address list
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeMessage.m_address_sender">
+            <summary>
+            The sender address
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeMessage.m_address_to">
+            <summary>
+            The to address list
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeMessage.m_address_cc">
+            <summary>
+            The CC address list
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeMessage.m_address_bcc">
+            <summary>
+            The BCC adress list
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeMessage.number">
+            <summary>
+            Message number
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeMessage.size">
+            <summary>
+            message size
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeMessage.m_errors">
+            <summary>
+            Contains last not critical errors
+            </summary>
+        </member>
+        <member name="M:SmtPop.MimeMessage.SetAddressFrom(SmtPop.MailAddress[])">
+            <summary>
+            Intializes the From: adresses field
+            </summary>
+            <param name="Addr">An array of address</param>
+        </member>
+        <member name="M:SmtPop.MimeMessage.SetAddressTo(SmtPop.MailAddress[])">
+            <summary>
+            Intializes the To: adresses field
+            </summary>
+            <param name="addr">An array of address</param>
+        </member>
+        <member name="M:SmtPop.MimeMessage.ToString">
+            <summary>
+            Return a string containing MimeMessage details 
+            </summary>
+            <returns>
+            A string containing MimeMessage details
+            </returns>
+        </member>
+        <member name="M:SmtPop.MimeMessage.IsMultipart">
+            <summary>
+            Check if the the message is multipart
+            </summary>
+            <returns>
+            True if the message is "multipart". Otherwise false.
+            </returns>
+        </member>
+        <member name="M:SmtPop.MimeMessage.CheckMultipart">
+            <summary>
+            Updates multiparts header before sending the mail. Dot not call directly
+            </summary>
+        </member>
+        <member name="M:SmtPop.MimeMessage.AddHeader(System.String,System.String)">
+            <summary>
+            The method adds an header in the header list
+            </summary>
+            <param name="field">The header field name</param>
+            <param name="fieldval">The header field value</param>
+        </member>
+        <member name="M:SmtPop.MimeMessage.AddLine(System.String)">
+            <summary>
+            Add a message line to the decoder
+            </summary>
+            <param name="line">A string containing a message line</param>
+        </member>
+        <member name="M:SmtPop.MimeMessage.EndDecode">
+            <summary>
+            Ensure decode is ended
+            </summary>
+        </member>
+        <member name="M:SmtPop.MimeMessage.HeaderBoundary">
+            <summary>
+            Extract the boundary field from message header
+            </summary>
+            <returns>A string containing the message boundary</returns>
+        </member>
+        <member name="M:SmtPop.MimeMessage.SaveAdr">
+            <summary>
+            Build headers from To, CC, and BCC address from address list
+            </summary>
+        </member>
+        <member name="M:SmtPop.MimeMessage.Read(System.IO.TextReader)">
+            <summary>
+            The method read an RFC 2822 Mime Message from the stream "stream"
+            </summary>
+            <param name="stream">The input stream</param>
+            <returns>The method return an RFC 2822 MimeMessage</returns>
+            <remarks></remarks>
+            <example>
+            <code escaped="true">
+            StreamReader re = new StreamReader (openFileDialog.FileName, System.Text.Encoding.ASCII);
+            MimeMessage m = new MimeMessage ();
+            m.Read (re);
+            Console.Write (m.ToString ());
+            </code>
+            </example>
+            <exception cref="T:System.Exception">Read error from stream</exception>
+        </member>
+        <member name="M:SmtPop.MimeMessage.Write(System.IO.TextWriter)">
+            <summary>
+            Writes messages to a stream
+            </summary>
+            <param name="stream">The stream to write the message on</param>
+        </member>
+        <member name="M:SmtPop.MimeMessage.SetSubject(System.String)">
+            <summary>
+            Initializes the message subject. Subject is MimeWord encoded utf8 base64 
+            </summary>
+            <param name="subject">A string containing the subject text</param>
+        </member>
+        <member name="M:SmtPop.MimeMessage.SetSubject(System.String,SmtPop.MimeTransferEncoding)">
+            <summary>
+            Initializes the message subject
+            </summary>
+            <param name="subject">A string containing the subject text</param>
+            <param name="TransferEncoding">The encoding method for subject (choose base64 for unicode)</param>
+        </member>
+        <member name="M:SmtPop.MimeMessage.SetBodyText(System.String)">
+            <summary>
+            Initializes the body
+            </summary>
+            <param name="body">The body text</param>
+            
+            
+        </member>
+        <member name="M:SmtPop.MimeMessage.SetBodyHtml(System.String)">
+            <summary>
+            Initializes the body
+            </summary>
+            <param name="body">The body text</param>
+            
+            
+        </member>
+        <member name="M:SmtPop.MimeMessage.SetBody(System.String,SmtPop.MimeTransferEncoding,SmtPop.MimeTextContentType)">
+            <summary>
+            Initializes the body
+            </summary>
+            <param name="body">The body text</param>
+            <param name="TransferEncoding">The Transfer encoding format</param>
+            <param name="ContentType">The Mime content type</param>
+            
+        </member>
+        <member name="M:SmtPop.MimeMessage.AddAttachment(SmtPop.MimeAttachment)">
+            <summary>
+            Adds an attachment
+            </summary>
+            <param name="attachment">Mime attachment</param>
+        </member>
+        <member name="M:SmtPop.MimeMessage.SetAttachments(SmtPop.MimeAttachment[])">
+            <summary>
+            Initializes the attachement list
+            </summary>
+            <param name="attachments">An attachment array</param>
+        </member>
+        <member name="M:SmtPop.MimeMessage.ReadAddressesFromHeaders">
+            <summary>
+            Initializes from,to,cc and bcc address list from headers.
+            </summary>
+        </member>
+        <member name="M:SmtPop.MimeMessage.ReadAddresses(SmtPop.MailAddressList@,System.String)">
+            <summary>
+            Read adresses from header line
+            </summary>
+            <param name="list">The address list to initialize</param>
+            <param name="src">A string containing header line with address list</param>
+        </member>
+        <member name="P:SmtPop.MimeMessage.Headers">
+            <summary>
+            Message header array
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeMessage.Body">
+            <summary>
+            The message body
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeMessage.Subject">
+            <summary>
+            The message subject
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeMessage.AddressFrom">
+            <summary>
+            The <b>From:</b> address list
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeMessage.AddressTo">
+            <summary>
+            The <b>To:</b> address list
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeMessage.AddressCC">
+            <summary>
+            The <b>CC:</b> address list
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeMessage.AddressBCC">
+            <summary>
+            The <b>BCC:</b> adress list
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeMessage.AddressSender">
+            <summary>
+            The <b>Sender:</b> address
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeMessage.Multipart">
+            <summary>
+            Return / set the multipart flag
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeMessage.LinesTreated">
+            <summary>
+            The number of text lines decoded to create the message
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeMessage.HeaderFrom">
+            <summary>
+            Gets or sets the "From" header field
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeMessage.HeaderTo">
+            <summary>
+            Gets or sets the "To" header field.
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeMessage.HeaderSubject">
+            <summary>
+            Gets or sets the "Subject" header field
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeMessage.HeaderMessageId">
+            <summary>
+            Gets or sets the "Message-ID" header field
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeMessage.HeaderContentType">
+            <summary>
+            Gets or sets the "Content-Type" header field
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeMessage.ContentTransferEncoding">
+            <summary>
+            Gets or sets the "Content-Transfer-Encoding" header field
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeMessage.Attachments">
+            <summary>
+            Attachment list
+            </summary>
+        </member>
+        <member name="P:SmtPop.MimeMessage.AttachmentArray">
+            <summary>
+            Attachment list
+            </summary>
+        </member>
+        <member name="T:SmtPop.MimeMessage.decoder_state">
+            <summary>
+            The decoder states
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeMessage.decoder_state.header">
+            <summary>
+            decoding header
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeMessage.decoder_state.body">
+            <summary>
+            decoding body
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeMessage.decoder_state.attachment">
+            <summary>
+            decoding attachment
+            </summary>
+        </member>
+        <member name="T:SmtPop.MimeWord.MimeWordDecoder">
+            <summary>
+            Decodes "Mime Word" encoded text
+            </summary>
+        </member>
+        <member name="M:SmtPop.MimeWord.MimeWordDecoder.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SmtPop.MimeWord.MimeWordDecoder.IsMimeWord(System.String)">
+            <summary>
+            Tests if a string is Mime Word encoded
+            </summary>
+            <param name="code">The string to test</param>
+            <returns>True if the string is MimeWord encoded, otherwise false</returns>
+        </member>
+        <member name="M:SmtPop.MimeWord.MimeWordDecoder.GetCharset(System.String)">
+            <summary>
+            Returns the charset of the code
+            </summary>
+            <param name="code">A quoted printable string</param>
+            <returns>The first charset found in the string</returns>
+        </member>
+        <member name="M:SmtPop.MimeWord.MimeWordDecoder.DecodeWord(System.String)">
+            <summary>
+            Decodes a "Mime word" encoded string
+            </summary>
+            <param name="code">A mime word encoded string</param>
+            <returns>The decoded string</returns>
+            <example>
+            <code>
+            MimeWordDecoder dec = new MimeWordDecoder ();
+            
+            String subject = dec.DecodeWord ("=?iso-8859-1?q?Youpi=20it=20work?=");
+            Console.Out.Writeline (subject);
+            </code>
+            Output:
+            Youpi it work
+            </example>
+        </member>
+        <member name="M:SmtPop.MimeWord.MimeWordDecoder.Decode(System.String)">
+            <summary>
+            Decodes the "Mime word" encoded string "code"
+            </summary>
+            <param name="code">A mime word encoded string</param>
+            <returns>The decoded string</returns>
+            <example>
+            <code>
+            MimeWordDecoder dec = new MimeWordDecoder ();
+            
+            String subject = dec.Decode ("=?iso-8859-1?q?Youpi=20it=20work?= =?iso-8859-15?q?fine?=");
+            Console.Out.Writeline (subject);
+            </code>
+            Output:
+            Youpi it work fine
+            </example>
+        </member>
+        <member name="M:SmtPop.MimeWord.MimeWordDecoder.Base64Decode(System.String,System.String)">
+            <summary>
+            Decodes a string encoded in base64
+            </summary>
+            <param name="Src">A string containing Base64 code</param>
+            <param name="Charset">The charset of the string to decode</param>
+            <returns>The decoded string</returns>
+        </member>
+        <member name="T:SmtPop.MimeWord.EncodingIdentifier">
+            <summary>
+            Encoding available for "Mime word" encoding
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeWord.EncodingIdentifier.QuotedPrintable">
+            <summary>
+            Quoted printable 
+            </summary>
+        </member>
+        <member name="F:SmtPop.MimeWord.EncodingIdentifier.Base64">
+            <summary>
+            Base64
+            </summary>
+        </member>
+        <member name="T:SmtPop.MimeWord.MimeWordEncoder">
+            <summary>
+            Encodes string in "Mime Word"
+            </summary>
+        </member>
+        <member name="M:SmtPop.MimeWord.MimeWordEncoder.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SmtPop.MimeWord.MimeWordEncoder.Encode(System.String,System.Text.Encoding,SmtPop.MimeWord.EncodingIdentifier)">
+            <summary>
+            Encodes a string in "Mime Word"
+            </summary>
+            <param name="Src">The string to encode</param>
+            <param name="Encoding">Encoding charset</param>
+            <param name="TransfertEncoding">The transfert encoding</param>
+            <returns>A MimeWord encoded string</returns>
+        </member>
+        <member name="M:SmtPop.MimeWord.MimeWordEncoder.Encode(System.String,System.Text.Encoding,SmtPop.MimeWord.EncodingIdentifier,System.Int32)">
+            <summary>
+            Encodes a string in "Mime Word"
+            </summary>
+            <param name="Src">The string to encode</param>
+            <param name="Encoding">The string charset Encoding</param>
+            <param name="TransfertEncoding">The transfert encoding</param>
+            <param name="Maxlength">Maximum number of char beetween 2 CRLF</param>
+            
+            <returns>A MimeWord encoded string</returns>
+        </member>
+        <member name="T:SmtPop.POP3Client">
+            <summary>
+            Pop3 Client
+            </summary>
+        </member>
+        <member name="F:SmtPop.POP3Client.m_endl">
+            <summary>
+            End of line constant
+            </summary>
+        </member>
+        <member name="F:SmtPop.POP3Client.m_error">
+            <summary>
+            last error string
+            </summary>
+        </member>
+        <member name="F:SmtPop.POP3Client.m_host">
+            <summary>
+            The server host name
+            </summary>
+        </member>
+        <member name="F:SmtPop.POP3Client.m_port">
+            <summary>
+            The server port
+            </summary>
+        </member>
+        <member name="F:SmtPop.POP3Client.m_user">
+            <summary>
+            The user name
+            </summary>
+        </member>
+        <member name="F:SmtPop.POP3Client.m_tcpClient">
+            
+            
+            <summary>
+            connection to server
+            </summary>
+        </member>
+        <member name="F:SmtPop.POP3Client.m_netStream">
+            <summary>
+            stream to server
+            </summary>
+        </member>
+        <member name="F:SmtPop.POP3Client.m_streamReader">
+            <summary>
+            NetworkStream decoder
+            </summary>
+        </member>
+        <member name="F:SmtPop.POP3Client.m_streamWriter">
+            <summary>
+            NetworkStream encoder
+            </summary>
+        </member>
+        <member name="F:SmtPop.POP3Client.m_sendTimeout">
+            <summary>
+            Timeout for write on socket
+            </summary>
+        </member>
+        <member name="F:SmtPop.POP3Client.m_receiveTimeout">
+            <summary>
+            Timeout for read on socket
+            </summary>
+        </member>
+        <member name="M:SmtPop.POP3Client.FireSendedCommand(System.String)">
+            <summary>
+            Sends the 'SendedCommand' event
+            </summary>
+            <param name="command"></param>
+        </member>
+        <member name="M:SmtPop.POP3Client.FireAnswerReceive(System.String)">
+            <summary>
+            Sends the 'Answer received' event
+            </summary>
+            <param name="answer">The answer received from the server</param>
+        </member>
+        <member name="M:SmtPop.POP3Client.FireConnected">
+            <summary>
+            Sends the 'connected' event
+            </summary>
+        </member>
+        <member name="M:SmtPop.POP3Client.FireAuthentified">
+            <summary>
+            Fire the 'authentified' event
+            </summary>
+        </member>
+        <member name="M:SmtPop.POP3Client.Open(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Connect the client to a POP3 server
+            </summary>
+            
+            <param name="pop3host">
+            Pop3 Mailserver
+            </param>
+            <param name="port">
+            POP3 server connection port (110)
+            </param>
+            <param name="user">
+            user login
+            </param>
+            <param name="pwd">
+            user password
+            </param>
+            <returns>1 if connected, -1 if error. Error property describe the last error</returns>
+            <remarks>
+            The command open the connection with the server
+            </remarks>
+            <example>
+            <code>
+            Open ("pop.mydomain", 110, "toto", "mypassword");
+            </code>
+            </example>
+        </member>
+        <member name="M:SmtPop.POP3Client.SendCommand(System.String)">
+            <summary>
+            Send a command to the pop3 server
+            </summary>
+            <param name="command">
+            command string
+            </param>
+            <exception cref="T:SmtPop.POP3Exception">Raise an exception if the server return an error condition</exception>
+            <returns>Return a string containing the server answer</returns>
+            <remarks>
+            All POP answer need to start with +OK. Otherwise this is an error status
+            </remarks>
+            <exception cref="T:System.Exception">Raise in case of communication error</exception>
+            <exception cref="T:SmtPop.POP3Exception">Raise if the server return an error condition</exception>
+        </member>
+        <member name="M:SmtPop.POP3Client.SendCommandBlock(System.String)">
+            <summary>
+            Send a command to the server and retreive a block of lines
+            </summary>
+            <param name="command">Command string</param>
+            <exception cref="T:System.Exception">Raise an exception in case of communication error</exception>
+            <exception cref="T:SmtPop.POP3Exception">Raise an exception if the server return an error condition</exception>
+            <returns>A string containing the server answer (without +OK... line)</returns>
+            <remarks>
+            All POP answer need to start with +OK. Otherwise this is an error status
+            </remarks>
+            <exception cref="T:System.Exception">Raise in case of communication error</exception>
+            <exception cref="T:SmtPop.POP3Exception">Raise if the server return an error condition</exception>
+        </member>
+        <member name="M:SmtPop.POP3Client.GetStat">
+            <summary>
+            Send POP STAT command
+            </summary>
+            <returns>
+            A string containing the server answer
+            </returns>
+            <remarks>
+            The <b>STAT</b> command return the current details of the connected mailbox. in
+            the form :<br/>
+            <b>+OK nnn BBBB</b> where nnn indicate the number of messages in the mailbox and
+            BBBB the total number of bytes in mailbox
+            </remarks>
+            <exception cref="T:System.Exception">Raise in case of communication error</exception>
+            <exception cref="T:SmtPop.POP3Exception">Raise if the server return an error condition</exception>
+        </member>
+        <member name="M:SmtPop.POP3Client.SendLogin(System.String,System.String)">
+            <summary>
+            Send user login and password to the server
+            </summary>
+            <param name="user">User name</param>
+            <param name="password">User password</param>
+            <returns>1 if the login succeded</returns>
+            <exception cref="T:System.Exception">Raise in case of communication error</exception>
+            <exception cref="T:SmtPop.POP3Exception">Raise if the server return an error condition</exception>
+        </member>
+        <member name="M:SmtPop.POP3Client.GetList">
+            <summary>
+            Sends LIST command
+            </summary>
+            <remarks>
+            The <b>LIST</b> command return the current contents of the connected mailbox. in
+            the form of a block of lines. 
+            for each messages in mailbox the line as the form :<BR/>
+            <b>+OK nnn BBBB </b>where nnn indicate the message number in the mailbox and
+            BBBB the message size in Bytes
+            </remarks>
+            <returns>A string containing the server answer</returns>
+            <exception cref="T:System.Exception">Raise in case of communication error</exception>
+            <exception cref="T:SmtPop.POP3Exception">Raise if the server return an error condition</exception>
+        </member>
+        <member name="M:SmtPop.POP3Client.GetList(System.Int32)">
+            <summary>
+            Get the message list
+            </summary>
+            <param name="num">
+            Message number
+            </param>
+            <returns>
+            The server answer
+            </returns>
+            /// <remarks>
+            The <b>LIST n</b> command return the current contents of the connected mailbox. in
+            the form :<BR/>
+            <b>+OK nnn BBBB </b>where nnn indicate the message number and
+            BBBB the message size in bytes.
+            </remarks>
+            <exception cref="T:System.Exception">Raise in case of communication error</exception>
+            <exception cref="T:SmtPop.POP3Exception">Raise if the server return an error condition</exception>
+        </member>
+        <member name="M:SmtPop.POP3Client.GetMailList">
+            <summary>
+            Retrieve the message list from the server
+            </summary>
+            <returns>The list of message on the server</returns>
+            <exception cref="T:System.Exception">Raise in case of communication error</exception>
+            <exception cref="T:SmtPop.POP3Exception">Raise if the server return an error condition</exception>
+        </member>
+        <member name="M:SmtPop.POP3Client.GetMailReader(SmtPop.POPMessageId)">
+            <summary>
+            Construct a new PopReader pointing to a message on the server
+            </summary>
+            <param name="Id">Message identifier</param>
+            <returns>A PopReader pointing to the message "num"</returns>
+            <exception cref="T:System.Exception">Raise in case of communication error</exception>
+            <exception cref="T:SmtPop.POP3Exception">Raise if the server return an error condition</exception>
+        </member>
+        <member name="M:SmtPop.POP3Client.GetHeaderReader(SmtPop.POPMessageId)">
+            <summary>
+            Construct a new PopReader pointing to a message header on the server
+            </summary>
+            <param name="Id">Message identifier</param>
+            <returns>A PopReader pointing to the message "num" header</returns>
+            <exception cref="T:System.Exception">Raise in case of communication error</exception>
+            <exception cref="T:SmtPop.POP3Exception">Raise if the server return an error condition</exception>
+        </member>
+        <member name="M:SmtPop.POP3Client.Retr(System.Int32)">
+            <summary>
+            Send a RETR command
+            </summary>
+            <param name="num">
+            Message number
+            </param> 
+            <returns>
+            A string containing the message.
+            </returns>
+            <exception cref="T:System.Exception">Raise in case of communication error</exception>
+            <exception cref="T:SmtPop.POP3Exception">Raise if the server return an error condition</exception>
+        </member>
+        <member name="M:SmtPop.POP3Client.Dele(System.Int32)">
+            <summary>
+            Send DELE command
+            </summary>
+            <param name="num">
+            Message number to delete
+            </param>
+            <returns>
+            Server answer
+            </returns>
+            <remarks>
+            The command mark the message "num" as deleted.
+            </remarks>
+            
+            <exception cref="T:System.Exception">Raise in case of communication error</exception>
+            <exception cref="T:SmtPop.POP3Exception">Raise if the server return an error condition</exception>
+        </member>
+        <member name="M:SmtPop.POP3Client.Noop">
+            <summary>
+            Send NOOP command
+            </summary>
+            <returns>
+            The server answer
+            </returns>
+            <remarks>
+            The command do nothing (No Operation)
+            </remarks>
+            <exception cref="T:System.Exception">Raise in case of communication error</exception>
+            <exception cref="T:SmtPop.POP3Exception">Raise if the server return an error condition</exception>
+        </member>
+        <member name="M:SmtPop.POP3Client.Rset">
+            <summary>
+            Send RSET Command
+            </summary>
+            <returns>
+            The server answer
+            </returns>
+            <remarks>
+            The command reset the mailbox (all deleted message are undeleted).
+            </remarks>
+            <exception cref="T:System.Exception">Raise in case of communication error</exception>
+            <exception cref="T:SmtPop.POP3Exception">Raise if the server return an error condition</exception>
+        </member>
+        <member name="M:SmtPop.POP3Client.Quit">
+            <summary>
+            Send the QUIT command
+            </summary>
+            <returns>
+            The server answer
+            </returns>
+            <remarks>
+            The command instruct the server to commit changes (delete messages marked as deleted) and close the connection.
+            </remarks>
+            <exception cref="T:System.Exception">Raise in case of communication error</exception>
+            <exception cref="T:SmtPop.POP3Exception">Raise if the server return an error condition</exception>
+        </member>
+        <member name="M:SmtPop.POP3Client.GetTop(System.Int32,System.Int32)">
+            <summary>
+            Send a TOP command to the pop3 server
+            </summary>
+            <param name="num_mess">
+            message number
+            </param>
+            <param name="nlines">
+             number of lines
+            </param>
+            <returns>
+            The server answer
+            </returns>
+            <remarks>
+            the server return the message header and the "nlines" first lines of the body.<BR/>
+            if "nlines" == 0 the server return the message header.
+            </remarks>
+            <exception cref="T:System.Exception">Raise in case of communication error</exception>
+            <exception cref="T:SmtPop.POP3Exception">Raise if the server return an error condition</exception>
+        </member>
+        <member name="M:SmtPop.POP3Client.GetTop(System.Int32)">
+            <summary>
+            Send a TOP command to the pop3 server
+            </summary>
+            <param name="num">
+            message number
+            </param>
+            <returns>
+            The server answer
+            </returns>
+            <remarks>
+            The answer depend on server implementation.
+            </remarks>
+            <exception cref="T:System.Exception">Raise in case of communication error</exception>
+            <exception cref="T:SmtPop.POP3Exception">Raise if the server return an error condition</exception>
+        </member>
+        <member name="M:SmtPop.POP3Client.GetUidl(System.Int32)">
+            <summary>
+            Send a UIDL command
+            </summary>
+            <param name="num">
+            Message number
+            </param>
+            <returns>
+            The server answer an unique identifier for the message 'num'.
+            </returns>
+            <exception cref="T:System.Exception">Raise in case of communication error</exception>
+            <exception cref="T:SmtPop.POP3Exception">Raise if the server return an error condition</exception>
+        </member>
+        <member name="M:SmtPop.POP3Client.GetUidl">
+             <summary>
+             Send a UIDL command
+             </summary>
+             <returns>
+             The server answer
+            </returns>
+            <remarks>
+            The server return a list of unique identifier for all message in mailbox.<BR/>
+            Each line as the form :<BR/>
+            <B>nnn IIIIIII</B> where n is the message number and IIIII the unique message identifier.
+            </remarks>
+             <exception cref="T:System.Exception">Raise in case of communication error</exception>
+             <exception cref="T:SmtPop.POP3Exception">Raise if the server return an error condition</exception>
+        </member>
+        <member name="P:SmtPop.POP3Client.Error">
+            <summary>
+            Last error string
+            </summary>
+        </member>
+        <member name="P:SmtPop.POP3Client.SendTimeout">
+            <summary>
+            Timeout for write on socket
+            </summary>
+        </member>
+        <member name="P:SmtPop.POP3Client.ReceiveTimeout">
+            <summary>
+            Timeout for read on socket
+            </summary>
+        </member>
+        <member name="E:SmtPop.POP3Client.Connected">
+            <summary>
+            Event fire when connection is established with the server
+            </summary>
+        </member>
+        <member name="E:SmtPop.POP3Client.Authentified">
+            <summary>
+            Event fire when authentification is done
+            </summary>
+        </member>
+        <member name="E:SmtPop.POP3Client.Received">
+            <summary>
+            Event fire when some data has been received from the server
+            </summary>
+        </member>
+        <member name="E:SmtPop.POP3Client.SendedCommand">
+            <summary>
+            Event fire when a command is send to the server
+            </summary>
+        </member>
+        <member name="E:SmtPop.POP3Client.ServerAnswer">
+            <summary>
+            Event fire when an aswer is receive from the server
+            </summary>
+        </member>
+        <member name="T:SmtPop.POP3Exception">
+            <summary>
+            POP3 Client communication exception
+            </summary>
+        </member>
+        <member name="M:SmtPop.POP3Exception.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="err">A string containing the exception details</param>
+        </member>
+        <member name="T:SmtPop.POPMessageId">
+            <summary>
+            Message Identifier
+            </summary>
+        </member>
+        <member name="F:SmtPop.POPMessageId.m_id">
+            <summary>
+            Message number from server
+            </summary>
+        </member>
+        <member name="F:SmtPop.POPMessageId.m_size">
+            <summary>
+            Message size
+            </summary>
+        </member>
+        <member name="M:SmtPop.POPMessageId.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="Id">Message identifier (indice)</param>
+            <param name="Size">Message size</param>
+        </member>
+        <member name="P:SmtPop.POPMessageId.Id">
+            <summary>
+            Message number from server
+            </summary>
+        </member>
+        <member name="P:SmtPop.POPMessageId.Size">
+            <summary>
+            The message size
+            </summary>
+        </member>
+        <member name="T:SmtPop.POPReader">
+            <summary>
+            A stream to read one message from a pop3 server
+            </summary>
+        </member>
+        <member name="F:SmtPop.POPReader.m_byteread">
+            <summary>
+            The total amount of byte read
+            </summary>
+        </member>
+        <member name="F:SmtPop.POPReader.m_bytetotal">
+            <summary>
+            The message size
+            </summary>
+        </member>
+        <member name="F:SmtPop.POPReader.TCPStream">
+            <summary>
+            The connection to the pop3 server
+            </summary>
+        </member>
+        <member name="F:SmtPop.POPReader.EOF">
+            <summary>
+            End of file flag
+            </summary>
+        </member>
+        <member name="M:SmtPop.POPReader.#ctor(System.IO.StreamReader,SmtPop.ReceivedEventHandler,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="stream">TCP stream to a POP3 server</param>
+            <param name="ReceiveEvent">The receive event handler</param>
+            <param name="MessageSize">The message size in byte</param>
+        </member>
+        <member name="M:SmtPop.POPReader.#ctor(System.IO.StreamReader)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="stream">TCP stream to a POP3 server</param>
+        </member>
+        <member name="M:SmtPop.POPReader.Peek">
+            <summary>
+            Peek a char from the stream
+            </summary>
+            <returns>Char at current position</returns>
+        </member>
+        <member name="M:SmtPop.POPReader.ReadLine">
+            <summary>
+            Read a line from the stream
+            </summary>
+            <returns>Line at current position</returns>
+        </member>
+        <member name="M:SmtPop.POPReader.ReadToEnd">
+            <summary>
+            Read the entire stream
+            </summary>
+            <returns>The entire stream from current posiion</returns>
+        </member>
+        <member name="M:SmtPop.POPReader.Read(System.Char[],System.Int32,System.Int32)">
+            <summary>
+            Read from stream
+            </summary>
+            <param name="buf">Buffer</param>
+            <param name="index">Position in buffer</param>
+            <param name="count">Number of char to read</param>
+            <returns>Number of char read</returns>
+        </member>
+        <member name="E:SmtPop.POPReader.Received">
+            <summary>
+            Event fire when some data has been received from the server
+            </summary>
+        </member>
+        <member name="P:SmtPop.POPReader.EndOfStream">
+            <summary>
+            Show if it is possible to read the stream (eof status)
+            </summary>
+        </member>
+        <member name="T:SmtPop.QPEncoder">
+            <summary>
+            The class provide method to encode/decode Quoted Printable
+            </summary>
+        </member>
+        <member name="M:SmtPop.QPEncoder.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SmtPop.QPEncoder.IsAscii(System.String)">
+            <summary>
+            Tests if a string is US-ASCII encoded
+            </summary>
+            <param name="src">The string to test</param>
+            <returns>true if the the string is US-ASCII. Otherwise false</returns>
+        </member>
+        <member name="M:SmtPop.QPEncoder.Encode(System.String,System.String)">
+            <summary>
+            The method encode a string into a quoted printable string. The used charset is the default system charset
+            </summary>
+            <param name="Src">A string to encode</param>
+            <param name="Charset">The charset name (ie "utf-8" or "iso-8859-1")</param>
+            <returns>A quoted printable string</returns>
+        </member>
+        <member name="M:SmtPop.QPEncoder.Encode(System.String,System.Text.Encoding)">
+            <summary>
+            The method encode a string into a quoted printable string. 
+            </summary>
+            <param name="Src">A string to encode</param>
+            <param name="Encoding">The charset encoder</param>
+            <returns>A quoted printable string</returns>
+        </member>
+        <member name="M:SmtPop.QPEncoder.Encode(System.Char,System.Text.Encoding)">
+            <summary>
+            The method encodes a char into a quoted printable string. 
+            </summary>
+            <param name="Src">A char to encode</param>
+            <param name="Encoding">The charset encoder</param>
+            <returns>A quoted printable string</returns>
+        </member>
+        <member name="M:SmtPop.QPEncoder.Encode(System.Char,System.String)">
+            <summary>
+            The method encodes a char into a quoted printable string. 
+            </summary>
+            <param name="Src">A char to encode</param>
+            <param name="Charset">The charset name (ie "utf-8" or "iso-8859-1")</param>
+            <returns>A quoted printable string</returns>
+        </member>
+        <member name="M:SmtPop.QPEncoder.Encode(System.String)">
+            <summary>
+            The method encodes a string into a quoted printable string. The used charset is UTF8
+            </summary>
+            <param name="Src">A string to encode</param>
+            <returns>A quoted printable string</returns>
+        </member>
+        <member name="M:SmtPop.QPEncoder.Decode(System.String,System.String)">
+            <summary>
+            Decodes a quoted printable string
+            </summary>
+            <param name="Src">A string containing quoted printable text</param>
+            <param name="Charset">The charset of the string</param>
+            <returns>A string containing the decoded string</returns>
+        </member>
+        <member name="T:SmtPop.ReceivedEventParam">
+            <summary>
+            The received event parameters
+            </summary>
+        </member>
+        <member name="F:SmtPop.ReceivedEventParam.m_received">
+            <summary>
+            The amount of byte already received
+            </summary>
+        </member>
+        <member name="F:SmtPop.ReceivedEventParam.m_expected">
+            <summary>
+            The amount of byte of the message
+            </summary>
+        </member>
+        <member name="M:SmtPop.ReceivedEventParam.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="ByteReceived">The number of Bytes received</param>
+            <param name="Bytexpected">The number of Bytes of the messages</param>
+        </member>
+        <member name="P:SmtPop.ReceivedEventParam.ByteReceived">
+            <summary>
+            // the total amount of byte received
+            </summary>
+        </member>
+        <member name="P:SmtPop.ReceivedEventParam.ByteExpected">
+            <summary>
+            The total amount of bytes expected (The message size in bytes)
+            </summary>
+        </member>
+        <member name="T:SmtPop.ServerAnswerEventParam">
+            <summary>
+            Description résumée de ServerAnswerEventParam.
+            </summary>
+        </member>
+        <member name="M:SmtPop.ServerAnswerEventParam.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="Answer">The answer received from the server</param>
+        </member>
+        <member name="P:SmtPop.ServerAnswerEventParam.Answer">
+            <summary>
+            The aswer received from the server
+            </summary>
+        </member>
+        <member name="T:SmtPop.ServerDialogEventParam">
+            <summary>
+            Description résumée de ServerDialogEventParam.
+            </summary>
+        </member>
+        <member name="F:SmtPop.ServerDialogEventParam.m_command">
+            <summary>
+            The command sended to the server
+            </summary>
+        </member>
+        <member name="F:SmtPop.ServerDialogEventParam.m_answer">
+            <summary>
+            The answer received from the server
+            </summary>
+        </member>
+        <member name="M:SmtPop.ServerDialogEventParam.#ctor(System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="Command">The command sended to the server</param>
+            <param name="Answer">The answer received from the server</param>
+        </member>
+        <member name="P:SmtPop.ServerDialogEventParam.Command">
+            <summary>
+            The command sended to the server
+            </summary>
+        </member>
+        <member name="P:SmtPop.ServerDialogEventParam.Answer">
+            <summary>
+            The answer received from the server
+            </summary>
+        </member>
+        <member name="T:SmtPop.SMTPClient">
+            <summary>
+            This class sends a MimeMessage to an SMTP server
+            </summary>
+            <example>
+            This sample sends an e-mail
+            <code>
+            MimeMessage msg = new MimeMessage ();
+            string body = "This is a simple message for test";
+            string subject = "A simple message for test";
+            
+            MailAddressList from = new MailAddressList ();
+            from.Add (new MailAddress ("toto &lt;toto@toto.com&gt;"));
+            msg.AddressFrom = from;
+            			
+            MailAddressList to = new MailAddressList ();
+            to.Add (new MailAddress (TestConstant.toadr));
+            msg.AddressTo = to;
+            			
+            msg.SaveAdr ();
+            
+            msg.SetSubject (subject, MimeTransferEncoding.Ascii7Bit);
+            msg.SetBody (body, MimeTransferEncoding.Ascii7Bit, MimeTextContentType.TextPlain);
+            
+            SMTPClient smtp = new SMTPClient (TestConstant.host, TestConstant.portsmtp);
+            smtp.Open ();
+            smtp.SendMail (msg);
+            smtp.Close ();
+            </code>
+            </example>
+        </member>
+        <member name="F:SmtPop.SMTPClient.m_tcpClient">
+            <summary>
+            The tcp connection with the server
+            </summary>
+        </member>
+        <member name="F:SmtPop.SMTPClient.m_netStream">
+            <summary>
+            A stream for io with server
+            </summary>
+        </member>
+        <member name="F:SmtPop.SMTPClient.m_streamReader">
+            <summary>
+            NetworkStream decoder
+            </summary>
+        </member>
+        <member name="F:SmtPop.SMTPClient.m_streamWriter">
+            <summary>
+            NetworkStream encoder
+            </summary>
+        </member>
+        <member name="F:SmtPop.SMTPClient.m_host">
+            <summary>
+            Server m_host address
+            </summary>
+        </member>
+        <member name="F:SmtPop.SMTPClient.m_port">
+            <summary>
+            Connection m_port
+            </summary>
+        </member>
+        <member name="F:SmtPop.SMTPClient.m_sendTimeout">
+            <summary>
+            Send timeout on tcp connection
+            </summary>
+        </member>
+        <member name="F:SmtPop.SMTPClient.m_receiveTimeout">
+            <summary>
+            Receive timeout on tcp connection
+            </summary>
+        </member>
+        <member name="M:SmtPop.SMTPClient.FireConnected">
+            <summary>
+            Sends the 'connected' event
+            </summary>
+        </member>
+        <member name="M:SmtPop.SMTPClient.FireSendedCommand(System.String)">
+            <summary>
+            Sends the 'SendedCommand' event
+            </summary>
+            <param name="command"></param>
+        </member>
+        <member name="M:SmtPop.SMTPClient.FireReceivedCommand(System.String)">
+            <summary>
+            Sends the 'Answer received' event
+            </summary>
+            <param name="answer">The answer received from the server</param>
+        </member>
+        <member name="M:SmtPop.SMTPClient.#ctor">
+            <summary>Default constructor</summary>
+            <example>
+            <code>
+            	SmtpClient smtp = new SmtpClient();
+            	smtp.Host = "smtp.dummy.com";
+            	smtp.Port = 25;
+            	 	
+            </code>
+            </example>
+        </member>
+        <member name="M:SmtPop.SMTPClient.#ctor(System.String,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="Host">Server m_host name or ip</param>
+            <param name="Port">The m_port connection to the server</param>
+            <example>
+            <code>
+            	SmtpClient smtp = new Smtp("smtp.dummy.com", 25);
+            </code>
+            </example>
+        </member>
+        <member name="M:SmtPop.SMTPClient.SendCommand(System.String,System.String)">
+            <summary>
+            Sends a command to smtp server
+            </summary>
+            <param name="cmd">A string containing the command to send</param>
+            <param name="expected_status">A string containing the expected server answer</param>
+            <returns>A string containing the server answer</returns>
+        </member>
+        <member name="M:SmtPop.SMTPClient.SendMail(SmtPop.MimeMessage,System.String,System.Int32)">
+            <summary>Sends an e-mail message</summary>
+            <param name="msg">The message to send</param>
+            <param name="Host">SMTP server hostname or IP address</param>
+            <param name="Port">Port used for the connection</param>
+        </member>
+        <member name="M:SmtPop.SMTPClient.SendMail(SmtPop.MimeMessage,SmtPop.MailAddress,System.String,System.Int32)">
+            <summary>Sends an e-mail message</summary>
+            <param name="msg">The message to send</param>
+            <param name="dst">The destination address</param>
+            <param name="Host">SMTP server hostname or IP address</param>
+            <param name="Port">Port used for the connection</param>
+        </member>
+        <member name="M:SmtPop.SMTPClient.SendMail(SmtPop.MimeMessage)">
+            <summary>Sends an e-mail message to the connected server</summary>
+            <param name="msg">The mail message to send</param>
+        </member>
+        <member name="M:SmtPop.SMTPClient.SendMail(SmtPop.MimeMessage,SmtPop.MailAddress)">
+            <summary>
+            Sends an e-mail message to the connected server
+            </summary>
+            <param name="msg">The mail message to send</param>
+            <param name="dst">The destination address</param>
+        </member>
+        <member name="M:SmtPop.SMTPClient.SendFromAddr(SmtPop.MimeMessage)">
+            <summary>
+            Sends the "from:" SMTP command
+            </summary>
+            <param name="msg">Mime message</param>
+        </member>
+        <member name="M:SmtPop.SMTPClient.Close">
+            <summary>
+            Close the connection with the server
+            </summary>
+        </member>
+        <member name="M:SmtPop.SMTPClient.Open">
+            <summary>
+            Opens the connection with the server
+            </summary>
+        </member>
+        <member name="M:SmtPop.SMTPClient.DeliverTo(SmtPop.MailAddressList)">
+            <summary>
+            Send recipients addresses to the server
+            </summary>
+            <param name="recipients">Recipient address list</param>
+        </member>
+        <member name="M:SmtPop.SMTPClient.DeliverTo(SmtPop.MailAddress)">
+            <summary>
+            Send a recipient address to the server
+            </summary>
+            <param name="recipient">Recipient address </param>
+        </member>
+        <member name="E:SmtPop.SMTPClient.Connected">
+            <summary>
+            Event fire when connection is established with the server
+            </summary>
+        </member>
+        <member name="E:SmtPop.SMTPClient.SendedCommand">
+            <summary>
+            Event fire when a command is send to the server
+            </summary>
+        </member>
+        <member name="E:SmtPop.SMTPClient.ServerAnswer">
+            <summary>
+            Event fire when an aswer is receive from the server
+            </summary>
+        </member>
+        <member name="P:SmtPop.SMTPClient.Host">
+            <summary>
+            The m_host name or IP of the SMTP server
+            </summary>
+        </member>
+        <member name="P:SmtPop.SMTPClient.Port">
+            <summary>
+            The SMTP server connection m_port
+            </summary>
+        </member>
+        <member name="P:SmtPop.SMTPClient.SendTimeout">
+            <summary>
+            The timeout to sending data to the server
+            </summary>
+        </member>
+        <member name="P:SmtPop.SMTPClient.ReceiveTimeout">
+            <summary>
+            The timeout for receiving data from server
+            </summary>
+        </member>
+        <member name="T:SmtPop.SMTPDestination">
+            <summary>
+            for future use
+            </summary>
+        </member>
+        <member name="F:SmtPop.SMTPDestination.m_domain">
+            <summary>
+            SMTP Server domain
+            </summary>
+        </member>
+        <member name="F:SmtPop.SMTPDestination.m_port">
+            <summary>
+            SMTP Server port
+            </summary>
+        </member>
+        <member name="F:SmtPop.SMTPDestination.m_host">
+            <summary>
+            SMTP Server host
+            </summary>
+        </member>
+        <member name="M:SmtPop.SMTPDestination.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:SmtPop.SmtpException">
+            <summary>
+            Smtp Client communication exception
+            </summary>
+        </member>
+        <member name="M:SmtPop.SmtpException.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="err">A string containing the exception details</param>
+        </member>
+        <member name="T:SmtPop.SMTPWriter">
+            <summary>
+            A stream to send MimeMessage to smtp server
+            </summary>
+        </member>
+        <member name="F:SmtPop.SMTPWriter.m_writer">
+            <summary>
+            The main writer
+            </summary>
+        </member>
+        <member name="F:SmtPop.SMTPWriter.m_debugStream">
+            <summary>
+            A writer for debug purpose. All text writtten to the SMTPWriter is 
+            written on this Stream;
+            </summary>
+        </member>
+        <member name="M:SmtPop.SMTPWriter.#ctor(System.IO.StreamWriter)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="wr">A streamwriter to the SMTP server</param>
+        </member>
+        <member name="M:SmtPop.SMTPWriter.Close">
+            <summary>
+            Close the current stream. Leaving the network stream , DebugStream and DialogStream open
+             
+            </summary>
+        </member>
+        <member name="M:SmtPop.SMTPWriter.Flush">
+            <summary>
+            Flush all data to the server
+            </summary>
+        </member>
+        <member name="M:SmtPop.SMTPWriter.Write(System.String)">
+            <summary>
+            Writes data to the server.
+            </summary>
+            <param name="st"></param>
+        </member>
+        <member name="P:SmtPop.SMTPWriter.Encoding">
+            <summary>
+            The writer encoding
+            </summary>
+        </member>
+        <member name="P:SmtPop.SMTPWriter.DebugStream">
+            <summary>
+            A writer for debug purpose. All text writtten to the SMTPWriter is 
+            written on this Stream.
+            It is useful to debug SMTP formatting
+            
+            
+            </summary>
+            <example>
+            <code>
+            SMTPWriter wr = new SMTPWriter (smtp);
+            wr.DebugStream = = new System.IO.StreamWriter ("debug.eml", false, System.Text.Encoding.ASCII);
+            wr.Write (Message);
+            </code>
+            </example>
+        </member>
+    </members>
+</doc>

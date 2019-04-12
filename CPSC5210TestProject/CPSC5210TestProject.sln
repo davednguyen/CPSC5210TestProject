@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPSC5210TestProject", "CPSC5210TestProject\CPSC5210TestProject.csproj", "{305451CB-8F63-436F-B79A-91BDCCEBD17C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfSharp", "..\PDFSharpProject\PDFsharp\src\PdfSharp\PdfSharp.csproj", "{5A6055BC-BF86-4FDD-9F62-0109DB7A303B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{305451CB-8F63-436F-B79A-91BDCCEBD17C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{305451CB-8F63-436F-B79A-91BDCCEBD17C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{305451CB-8F63-436F-B79A-91BDCCEBD17C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A6055BC-BF86-4FDD-9F62-0109DB7A303B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A6055BC-BF86-4FDD-9F62-0109DB7A303B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A6055BC-BF86-4FDD-9F62-0109DB7A303B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A6055BC-BF86-4FDD-9F62-0109DB7A303B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

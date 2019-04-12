@@ -1,0 +1,2 @@
+C:\Users\mr4eyesn\Desktop\SoftwareTestingTestProject\SMTPCLassLibraryProject\SMTP\obj\Debug\SMTP.csprojAssemblyReference.cache
+C:\Users\mr4eyesn\Desktop\SoftwareTestingTestProject\SMTPCLassLibraryProject\SMTP\obj\Debug\SMTP.csproj.CoreCompileInputs.cache

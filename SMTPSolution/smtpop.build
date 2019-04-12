@@ -1,0 +1,278 @@
+<?xml version="1.0"?>
+    <project name="Simple Mail and Post Office Protocol (SMTPOP)" default="all" basedir=".">
+        <description>Implementation of SMTP and POP3 protocols</description>
+        <property name="debug" value="false" />
+		<property name="projpath" value="${nant.project.basedir}"/>
+		<property name="CompactFramework" value="C:\Program Files\Microsoft Visual Studio .NET 2003\CompactFrameworkSDK\v1.0.5000\Windows CE"/>
+		<property name="NUnit" value="C:\Program Files\NUnit 2.2\bin"/>
+		
+		<tstamp property="build.date" pattern="dd-MM-yyyy" verbose="true"/>
+		<echo message="Base build directory = ${projpath}" />
+		
+		
+		
+		<target name="all" desciption="build all" depends="build,buildtest,test,report,doc,samples"/>
+		<target name="minimal" desciption="minimum build" depends="build,buildtest,doc,samples"/>
+		
+        <target name="clean" description="remove all generated files">
+            <delete>
+				<fileset>
+					<include name="${projpath}/bin/smtpop.*"/>
+					<include name="${projpath}/bin/smtpopunit.*"/>
+					<include name="${projpath}/bin/*.exe"/>
+					<include name="${projpath}/bin/*.dll"/>
+					<include name="${projpath}/bin/*.xml"/>
+				</fileset>	
+			</delete>
+		</target>
+        <target name="build" description="Build the main assembly">
+            <csc target="library" output="${projpath}/bin/smtpop.dll" debug="${debug}" verbose="true" doc="${projpath}/bin/smtpop.xml">
+                <sources>
+                    <include name="${projpath}/src/*.cs" />
+                </sources>
+            </csc>
+			<codestats output="${projpath}/bin/smtpop.stat.xml" append="true" buildname="${build.date}">
+				<counts>
+					<count label="C#">
+						<fileset>
+							<include name="${projpath}/src/*.cs" />
+						</fileset>
+					</count>
+		        </counts>
+			</codestats>
+			
+        </target>
+		<target name="buildcf" description="Build the main assembly for Compact Framework">
+            <csc target="library" output="${projpath}/bin/smtpopcf.dll" debug="${debug}" verbose="true" doc="${projpath}/bin/smtpopcf.dll.xml" nostdlib="true">
+                <references>
+					<include name="${CompactFramework}/MSCorLib.dll" />
+					<include name="${CompactFramework}/System.dll" />
+					<include name="${CompactFramework}/System.Data.dll" />
+					<include name="${CompactFramework}/System.Data.Common.dll" />
+					<include name="${CompactFramework}/System.Xml.dll" />
+				</references>
+				<sources>
+                    <include name="${projpath}/src/*.cs" />
+                </sources>
+            </csc>
+        </target>
+		
+		<target name="redistcopy" description="Build the redistribution">
+            <delete dir="${projpath}/redist"/>
+			<mkdir dir="${projpath}/redist"/>
+			<mkdir dir="${projpath}/redist/src"/>
+			<mkdir dir="${projpath}/redist/unit"/>
+			<mkdir dir="${projpath}/redist/bin"/>
+			<mkdir dir="${projpath}/redist/bin/emltest"/>
+			<mkdir dir="${projpath}/redist/doc"/>
+			<mkdir dir="${projpath}/redist/demo"/>
+
+			<copy todir="${projpath}/redist/src">
+				<fileset basedir="${projpath}/src">
+					<include name="*.cs" />
+				</fileset>
+			</copy>
+			<copy todir="${projpath}/redist/bin/emltest">
+				<fileset basedir="${projpath}/bin/emltest">
+					<include name="debug.eml" />
+				</fileset>
+			</copy>
+			<copy todir="${projpath}/redist/unit">
+				<fileset basedir="${projpath}/unit">
+					<include name="*.cs" />
+				</fileset>
+			</copy>
+			<copy todir="${projpath}/redist/doc">
+				<fileset basedir="${projpath}/doc">
+					<include name="smtpopnamespace.xml" />
+				</fileset>
+			</copy>
+			
+			<copy todir="${projpath}/redist">
+				<fileset basedir="${projpath}">
+					<include name="smtpop.build" />
+				</fileset>
+			</copy>
+			<copy todir="${projpath}/redist">
+				<fileset basedir="${projpath}">
+					<include name="gpl.txt" />
+				</fileset>
+			</copy>
+			<copy todir="${projpath}/redist">
+				<fileset basedir="${projpath}">
+					<include name="Change.txt" />
+				</fileset>
+			</copy>
+			<copy todir="${projpath}/redist/demo" verbose="true">
+				<fileset basedir="${projpath}/demo">
+					
+					<exclude name="**/bin/**"/>
+					<exclude name="**/obj/**"/>
+					<exclude name="**/*.user"/>
+					<exclude name="**/*.csproj"/>											
+					<exclude name="**/*.sln"/>											
+					<exclude name="**/*.projdata"/>											
+					<exclude name="**/*.resx"/>
+					<include name="**/*.*" />
+				</fileset>
+			</copy>
+        </target>
+		
+		<target name="testredistfull" description="Build the redistribution and full test" depends="redistcopy">
+			<nant buildfile="${projpath}/redist/smtpop.build" target="all" inheritall="false" inheritrefs="false"/>
+		</target>
+		<target name="testredistmin" description="Build the redistribution and minimum test" depends="redistcopy">
+			<nant buildfile="${projpath}/redist/smtpop.build" target="minimal" inheritall="false" inheritrefs="false"/>
+		</target>
+		
+		<target name="zipredist" desciption="Compress redistribution">
+			<property name="dllpath" value="${projpath}/redist/bin/smtpop.dll"/>
+			<property name="dllname" value="${assemblyname::get-assembly-name(dllpath)}"/>
+			<property name="dllver" value="${assemblyname::get-version(assemblyname::get-assembly-name(dllpath))}"/>
+			
+			<echo message="${dllver }" />
+			
+			<zip zipfile="${projpath}/smtpop_src_${dllver}.zip">
+				<fileset basedir="${projpath}/redist">
+					<include name="**/*" />
+				</fileset>
+			</zip>	
+			<zip zipfile="${projpath}/smtpop_bin_${dllver}.zip">
+				<fileset basedir="${projpath}/redist/bin">
+					<include name="smtpop.dll" />
+					<include name="*.exe" />
+				</fileset>
+				<fileset basedir="${projpath}/redist/doc/MSDN">
+					<include name="*.chm" />
+				</fileset>
+			</zip>	
+		</target>
+		
+		<target name="redist" description="Build the redistribution and full test" depends="testredistfull,zipredist"/>
+		<target name="redistmin" description="Build the redistribution and minimum test" depends="testredistmin,zipredist"/>
+			
+		
+		
+		<target name="buildtest" description="Build the assembly for unit test">
+            <csc target="library" output="${projpath}/bin/smtpopunit.dll" debug="${debug}" verbose="true">
+                <references>
+					<include name="${NUnit}\nunit.framework.dll" />
+					
+				</references>
+				<sources>
+                    <include name="${projpath}/unit/*.cs" />
+					<include name="${projpath}/src/*.cs" />
+					
+                </sources>
+			</csc>		
+			<codestats output="${projpath}/bin/smtpopunit.stat.xml" append="true" buildname="${build.date}">
+				<counts>
+					<count label="C#">
+						<fileset>
+							<include name="${projpath}/src/*.cs" />
+						</fileset>
+					</count>
+		        </counts>
+			</codestats>
+        </target>
+		
+		<target name="test" description="unit test" depends="buildtest">
+			<nunit2 failonerror="false">
+				<formatter type="Xml" usefile="true" extension=".xml" outputdir="${projpath}/bin/tests" />
+				<test assemblyname="${projpath}/bin/smtpopunit.dll" />
+			</nunit2>
+		</target>
+		<target name="fasttest" description="unit test" depends="buildtest">
+			<nunit2 failonerror="false">
+				<formatter type="Xml" usefile="true" extension=".xml" outputdir="${projpath}/bin/fasttests" />
+				<test assemblyname="${projpath}/bin/smtpopunit.dll">
+					<categories>
+						<exclude name="LongRunning" />
+					</categories>
+				</test>
+			</nunit2>
+		</target>
+		
+				
+				
+		<target name="report" desciption="report test results" depends="buildtest,test">
+			<nunit2report format="frames" out="testreport.html" todir="${projpath}/bin/tests">
+                 <fileset>
+                    <include name="${projpath}/bin/tests/smtpopunit.dll-results.xml" />
+                 </fileset>
+              </nunit2report>
+
+        </target>
+		<target name="fastreport" desciption="report fast test results" depends="buildtest,fasttest">
+			<nunit2report format="frames" out="testreport.html" todir="${projpath}/bin/fasttests">
+                 <fileset>
+                    <include name="${projpath}/bin/tests/smtpopunit.dll-results.xml" />
+                 </fileset>
+              </nunit2report>
+
+        </target>
+		
+		<target name="doc" description="documentation" depends="build" verbose="true">
+			<ndoc verbose="true">
+				<assemblies basedir="${projpath}">
+					<include name="bin\smtpop.dll" />
+				</assemblies>
+				
+				<summaries  basedir="${projpath}">
+					<include name="doc\smtpopnamespace.xml" />
+				</summaries >
+				<documenters>
+					<documenter name="MSDN">
+						<property name="OutputDirectory" value="${projpath}\doc\MSDN" />
+						<property name="HtmlHelpName" value="smtpop" />
+						<property name="HtmlHelpCompilerFilename" value="hhc.exe" />
+						<property name="IncludeFavorites" value="False" />
+						<property name="Title" value="Simple Mail and Post Office Protocol for .Net (SmtPop)" />
+						<property name="SplitTOCs" value="True" />
+						<property name="DefaulTOC" value="" />
+						<property name="ShowVisualBasic" value="False" />
+						<property name="ShowMissingSummaries" value="True" />
+						<property name="ShowMissingRemarks" value="False" />
+						<property name="ShowMissingParams" value="True" />
+						<property name="ShowMissingReturns" value="True" />
+						<property name="ShowMissingValues" value="True" />
+						<property name="DocumentInternals" value="False" />
+						<property name="DocumentProtected" value="False" />
+						<property name="DocumentPrivates" value="False" />
+						<property name="DocumentEmptyNamespaces" value="False" />
+						<property name="IncludeAssemblyVersion" value="True" />
+						<property name="CopyrightText" value="(c) 2004-2006 sillycoder@users.sourceforge.net " />
+						<property name="CopyrightHref" value="http://sourceforge.net/projects/dotnetctrlext" />
+					</documenter>
+				</documenters> 
+			</ndoc>
+
+		</target>
+        <target name="testvc" desciption="run test on msvc build" verbose="true">
+			<nunit2 failonerror="false">
+				<formatter type="Xml" usefile="true" extension=".xml" outputdir="${projpath}/bin/tests" />
+				<test assemblyname="${projpath}/bin/debug/smtpopunit.dll">
+				<categories>
+					<exclude name="LongRunning" />
+				</categories>
+				</test>
+			</nunit2>
+        </target>
+		
+		<target name="testreport" desciption="mvsvc unit test report " depends="testvc">
+			<nunit2report format="frames" out="testreport.html" todir="${projpath}/bin/tests">
+                 <fileset>
+                    <include name="${projpath}/bin/tests/smtpopunit.dll-results.xml" />
+                 </fileset>
+				 
+
+              </nunit2report>
+
+        </target>
+		
+		<target name="samples" desciption="build samples" depends="build">
+			<nant buildfile="${projpath}/demo/demo.build" inheritall="false" inheritrefs="false"/>
+        </target>
+		
+		
+    </project>

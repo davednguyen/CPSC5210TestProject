@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<code-summaries>
+  <code-summary date="2006-05-06T19:42:14.9775000+02:00" buildname="06-05-2006">
+    <linecount label="C#" totalLineCount="9607" emptyLineCount="1266" commentLineCount="3449">
+      <file-summaries>
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\AssemblyInfo.cs" totalLineCount="82" emptyLineCount="6" commentLineCount="60" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\AuthentifiedEventParam.cs" totalLineCount="60" emptyLineCount="5" commentLineCount="33" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\CharsetConstants.cs" totalLineCount="7" emptyLineCount="3" commentLineCount="0" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\ClientCommandEventParam.cs" totalLineCount="32" emptyLineCount="5" commentLineCount="10" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\Config.cs" totalLineCount="43" emptyLineCount="4" commentLineCount="29" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\ConnectEventParam.cs" totalLineCount="73" emptyLineCount="4" commentLineCount="34" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\EventDefine.cs" totalLineCount="40" emptyLineCount="9" commentLineCount="21" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\MailAddress.cs" totalLineCount="300" emptyLineCount="37" commentLineCount="113" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\MailAddressList.cs" totalLineCount="1111" emptyLineCount="160" commentLineCount="234" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\MailAdressException.cs" totalLineCount="41" emptyLineCount="2" commentLineCount="29" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\MessageBuilder.cs" totalLineCount="226" emptyLineCount="36" commentLineCount="105" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\MimeAttachment.cs" totalLineCount="806" emptyLineCount="104" commentLineCount="228" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\MimeAttachmentList.cs" totalLineCount="2382" emptyLineCount="399" commentLineCount="872" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\MimeConstants.cs" totalLineCount="117" emptyLineCount="12" commentLineCount="59" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\MimeDecoder.cs" totalLineCount="63" emptyLineCount="9" commentLineCount="21" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\MimeEncoder.cs" totalLineCount="118" emptyLineCount="17" commentLineCount="60" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\MimeException.cs" totalLineCount="42" emptyLineCount="2" commentLineCount="29" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\MimeField.cs" totalLineCount="72" emptyLineCount="10" commentLineCount="23" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\MimeFieldList.cs" totalLineCount="334" emptyLineCount="33" commentLineCount="117" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\MimeMessage.cs" totalLineCount="1189" emptyLineCount="116" commentLineCount="304" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\MimeWordDecoder.cs" totalLineCount="231" emptyLineCount="25" commentLineCount="76" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\MimeWordEncoder.cs" totalLineCount="127" emptyLineCount="20" commentLineCount="51" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\POP3Client.cs" totalLineCount="673" emptyLineCount="76" commentLineCount="338" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\Pop3Exception.cs" totalLineCount="41" emptyLineCount="3" commentLineCount="27" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\PopMessageId.cs" totalLineCount="84" emptyLineCount="9" commentLineCount="40" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\PopReader.cs" totalLineCount="192" emptyLineCount="21" commentLineCount="70" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\QPEncoder.cs" totalLineCount="244" emptyLineCount="31" commentLineCount="70" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\ReceivedEventParam.cs" totalLineCount="82" emptyLineCount="7" commentLineCount="40" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\ServerAnswerEventParam.cs" totalLineCount="30" emptyLineCount="3" commentLineCount="10" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\ServerDialogEventParam.cs" totalLineCount="50" emptyLineCount="6" commentLineCount="20" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\SmtpClient.cs" totalLineCount="446" emptyLineCount="66" commentLineCount="181" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\SmtpConstants.cs" totalLineCount="32" emptyLineCount="2" commentLineCount="20" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\SMTPDestination.cs" totalLineCount="54" emptyLineCount="6" commentLineCount="35" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\SmtpException.cs" totalLineCount="40" emptyLineCount="2" commentLineCount="27" />
+        <file-summary name="H:\usr\home\cs\smpop\v005a\redist\src\SmtpWriter.cs" totalLineCount="143" emptyLineCount="16" commentLineCount="63" />
+      </file-summaries>
+    </linecount>
+  </code-summary>
+</code-summaries>

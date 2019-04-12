@@ -1,0 +1,35 @@
+25/01/2006 V 0.3b
+GPL.TXT added in redistribution
+Ensure message parts encoded in base 64 don't exceed 78 chars limits
+MimeWordEncoder class added to support "Mime word encoding"
+
+05/02/2006 V 0.3c
+Removed <sysinfo/> from nant script to avoid crash on some system
+Added ReceiveTimeout property on POP3Client class
+./demo/demo.build corrected to generate correct PopSrvToEml exe
+ReceiveTimeout initialized in PopSrvToEml samples
+File prefix added in PopSrvToEml.exe parameters
+Added class MimeDecoder to convert various string format in unicode string
+Added class MimeWordDecoder to decode "Mime Word encoding"
+Improved charset support in decoding Quoted printable And base64
+Added sample DisplaySubject.exe to display the subject of .eml files
+
+07/02/2006 V 0.3d Bug fix release
+Updated MimeWordEncoder
+updated MimeWordDecoder
+updated MailAddress
+
+27/02/2006 V 0.4a
+Updated samples SendSmtp
+Added SetBodyText and SetBodyHtml to MimeAttachment
+Added MessageBuilder class to easily build valid Message
+Updated unit tests
+Now the "receive" fields are store in an arraylist in the array of field
+
+06/05/2006 V 0.5a
+Change in attachment and message header to preserve headers field order
+Update ShowAttachmentList sample
+Update SendSmtp sample
+bug fix in SmtpClient class constructor
+Now GetMailReader wait for a message id
+Some events added to PopClient PopReader and SmtpClient
