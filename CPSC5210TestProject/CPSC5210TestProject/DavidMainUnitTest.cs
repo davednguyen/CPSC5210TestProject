@@ -66,5 +66,14 @@ namespace CPSC5210TestProject
             PdfDocument document = new PdfDocument();
             Assert.IsNotNull(document);
         }
+
+        [TestMethod]
+        public void TestCreateEmptyPageForAPDFDocument()
+        {
+            // Create an empty page
+            PdfDocument document = new PdfDocument();
+            PdfPage page = document.AddPage();
+            Assert.IsNotNull(page);
+        }
     }
 }
