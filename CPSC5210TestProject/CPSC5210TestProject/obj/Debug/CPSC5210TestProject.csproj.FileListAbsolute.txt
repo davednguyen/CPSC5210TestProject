@@ -12,3 +12,6 @@ C:\Users\mr4eyesn\Desktop\SoftwareTestingTestProject\CPSC5210TestProject\CPSC521
 C:\Users\mr4eyesn\Desktop\SoftwareTestingTestProject\CPSC5210TestProject\CPSC5210TestProject\obj\Debug\CPSC5210TestProject.csproj.CopyComplete
 C:\Users\mr4eyesn\Desktop\SoftwareTestingTestProject\CPSC5210TestProject\CPSC5210TestProject\obj\Debug\CPSC5210TestProject.dll
 C:\Users\mr4eyesn\Desktop\SoftwareTestingTestProject\CPSC5210TestProject\CPSC5210TestProject\obj\Debug\CPSC5210TestProject.pdb
+C:\Users\mr4eyesn\Desktop\SoftwareTestingTestProject\CPSC5210TestProject\CPSC5210TestProject\bin\Debug\PdfSharp.dll
+C:\Users\mr4eyesn\Desktop\SoftwareTestingTestProject\CPSC5210TestProject\CPSC5210TestProject\bin\Debug\PdfSharp.pdb
+C:\Users\mr4eyesn\Desktop\SoftwareTestingTestProject\CPSC5210TestProject\CPSC5210TestProject\bin\Debug\de\PdfSharp.resources.dll

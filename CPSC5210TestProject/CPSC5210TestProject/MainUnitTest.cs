@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using PdfSharp;
 
 
 namespace CPSC5210TestProject
@@ -10,9 +11,7 @@ namespace CPSC5210TestProject
         [TestMethod]
         public void FirstTest()
         {
-            Functions mainFunction = new Functions();
-            var total = mainFunction.SumOfTwoValues(20, 45);
-            Assert.AreEqual(65, total);
+           
         }
     }
 }
