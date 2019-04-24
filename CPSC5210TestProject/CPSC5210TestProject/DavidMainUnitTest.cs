@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PdfSharp;
 using PdfSharp.Pdf;
 using System.IO;
-
+using PdfSharp.Drawing;
 namespace CPSC5210TestProject
 {
     /// <summary>
@@ -90,6 +90,15 @@ namespace CPSC5210TestProject
             Stream outputStream=null;
             PdfDocument testDocument = new PdfDocument(outputStream);
             Assert.IsNotNull(testDocument);
+        }
+
+        [TestMethod]
+        public void CheckOutputForFontHelperClass()
+        {
+            // Create a font
+            XFont font = new XFont("Verdana", 20, XFontStyle.Bold);
+            Assert.AreEqual(12, font.Size);
+
         }
     }
 }
