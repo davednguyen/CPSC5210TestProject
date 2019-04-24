@@ -1,0 +1,27 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workbench ActiveDocument="CPSC5210TestProject/VishakhaUnitTest.cs">
+    <Files>
+      <File FileName="CPSC5210TestProject/MainUnitTest.cs" Line="1" Column="1" />
+      <File FileName="CPSC5210TestProject/DavidMainUnitTest.cs" Line="81" Column="33" />
+      <File FileName="CPSC5210TestProject/VishakhaUnitTest.cs" Line="10" Column="32" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="CPSC5210TestProject" expanded="True">
+            <Node name="CPSC5210TestProject" expanded="True">
+              <Node name="VishakhaUnitTest.cs" selected="True" />
+            </Node>
+            <Node name="PdfSharp" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
