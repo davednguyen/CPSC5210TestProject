@@ -1,24 +1,41 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="CPSC5210TestProject/VishakhaUnitTest.cs">
+﻿<Properties StartupConfiguration="{D9924091-0645-440A-9A03-BCF46B2C1C97}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="UnitTestForMac/MainUnitTest.cs">
     <Files>
       <File FileName="CPSC5210TestProject/MainUnitTest.cs" Line="1" Column="1" />
       <File FileName="CPSC5210TestProject/DavidMainUnitTest.cs" Line="81" Column="33" />
       <File FileName="CPSC5210TestProject/VishakhaUnitTest.cs" Line="10" Column="30" />
+      <File FileName="UnitTestForMac/MainUnitTest.cs" Line="14" Column="2" />
+      <File FileName="UnitTestForMac/VishakhaUnitTestOnMac.cs" Line="16" Column="1" />
+      <File FileName="UnitTestForMac/TejasUnitTestOnMac.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="CPSC5210TestProject" expanded="True">
-            <Node name="CPSC5210TestProject" expanded="True">
-              <Node name="VishakhaUnitTest.cs" selected="True" />
-            </Node>
+            <Node name="CPSC5210TestProject" expanded="True" />
             <Node name="PdfSharp" expanded="True" />
+            <Node name="UnitTestForMac" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="MainUnitTest.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="CPSC5210TestProject" expanded="True">
+            <Node name="UnitTestForMac" expanded="True">
+              <Node name="UnitTestForMac" expanded="True">
+                <Node name="UnitTest1" selected="True" />
+              </Node>
+            </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.UnitTestForMac PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
