@@ -1,0 +1,87 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\mr4eyesn\\Desktop\\SoftwareTestingTestProject\\CPSC5210TestProject\\UnitTestForMac\\UnitTestForMac.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\mr4eyesn\\Desktop\\SoftwareTestingTestProject\\CPSC5210TestProject\\UnitTestForMac\\UnitTestForMac.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\mr4eyesn\\Desktop\\SoftwareTestingTestProject\\CPSC5210TestProject\\UnitTestForMac\\UnitTestForMac.csproj",
+        "projectName": "UnitTestForMac",
+        "projectPath": "C:\\Users\\mr4eyesn\\Desktop\\SoftwareTestingTestProject\\CPSC5210TestProject\\UnitTestForMac\\UnitTestForMac.csproj",
+        "packagesPath": "C:\\Users\\mr4eyesn\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mr4eyesn\\Desktop\\SoftwareTestingTestProject\\CPSC5210TestProject\\UnitTestForMac\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mr4eyesn\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "C:\\Users\\mr4eyesn\\Desktop\\SoftwareTestingTestProject\\PDFSharpProject\\PDFsharp\\src\\PdfSharp\\PdfSharp.csproj": {
+                "projectPath": "C:\\Users\\mr4eyesn\\Desktop\\SoftwareTestingTestProject\\PDFSharpProject\\PDFsharp\\src\\PdfSharp\\PdfSharp.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[15.9.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\mr4eyesn\\Desktop\\SoftwareTestingTestProject\\PDFSharpProject\\PDFsharp\\src\\PdfSharp\\PdfSharp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\mr4eyesn\\Desktop\\SoftwareTestingTestProject\\PDFSharpProject\\PDFsharp\\src\\PdfSharp\\PdfSharp.csproj",
+        "projectName": "PdfSharp",
+        "projectPath": "C:\\Users\\mr4eyesn\\Desktop\\SoftwareTestingTestProject\\PDFSharpProject\\PDFsharp\\src\\PdfSharp\\PdfSharp.csproj"
+      },
+      "frameworks": {
+        "net20": {}
+      }
+    }
+  }
+}
