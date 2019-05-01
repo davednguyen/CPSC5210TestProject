@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<namespaces>
-    <namespace name="SmtPop">
-        The <b>Simple Mail and Post Office Protocol (SmtPop) for .Net</b> is a class library to deal with POP3 And SMTP server.
-    </namespace>
-    
-</namespaces>
