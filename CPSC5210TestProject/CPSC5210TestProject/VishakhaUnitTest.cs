@@ -1,28 +1,36 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Text;
+using System.Collections.Generic;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using PdfSharp;
+using PdfSharp.Pdf;
+using System.IO;
+using PdfSharp.Drawing;
 
 namespace CPSC5210TestProject
 {
     [TestClass]
     public class VishakhaUnitTest
     {
-        [Test()]
+        [TestMethod]
         public void TestPdfDocumentToBeNotNull()
         {
             PdfDocument document = new PdfDocument();
-            Assert.NotNull(document);
+            Assert.IsNotNull(document);
         }
 
-        [Test()]
+        [TestMethod]
         public void TestPageCountMatchesAddedPages()
         {
             PdfDocument document = new PdfDocument();
             document.AddPage();
             document.AddPage();
-            Assert.True(2 == document.PageCount);
+            Assert.IsTrue(2 == document.PageCount);
 
         }
-        [Test()]
+        [TestMethod]
         public void TestTitleMatches()
         {
             PdfDocument document = new PdfDocument();
