@@ -29,6 +29,13 @@ namespace CPSC5210TestProject
             PdfDocument document = new PdfDocument();
             PdfPage page = document.AddPage();
         }
+
+        [TestMethod]
+        public void TestAddPageToDocument1()
+        {
+            PdfDocument document = new PdfDocument();
+            PdfPage page = document.AddPage();
+        }
         [TestMethod]
 
         public void TestGetXgraphicsPage()
