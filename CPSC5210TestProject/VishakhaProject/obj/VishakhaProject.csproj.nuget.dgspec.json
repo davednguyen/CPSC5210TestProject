@@ -1,26 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "/Users/vishakhabhavsar/Desktop/softwaretesting/CPSC5210TestProject/CPSC5210TestProject/VishakhaProject/VishakhaProject.csproj": {}
+    "C:\\Users\\TejasChetan\\Desktop\\TestSoftWare\\CPSC5210TestProject\\CPSC5210TestProject\\VishakhaProject\\VishakhaProject.csproj": {}
   },
   "projects": {
-    "/Users/vishakhabhavsar/Desktop/softwaretesting/CPSC5210TestProject/CPSC5210TestProject/VishakhaProject/VishakhaProject.csproj": {
+    "C:\\Users\\TejasChetan\\Desktop\\TestSoftWare\\CPSC5210TestProject\\CPSC5210TestProject\\VishakhaProject\\VishakhaProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/vishakhabhavsar/Desktop/softwaretesting/CPSC5210TestProject/CPSC5210TestProject/VishakhaProject/VishakhaProject.csproj",
+        "projectUniqueName": "C:\\Users\\TejasChetan\\Desktop\\TestSoftWare\\CPSC5210TestProject\\CPSC5210TestProject\\VishakhaProject\\VishakhaProject.csproj",
         "projectName": "VishakhaProject",
-        "projectPath": "/Users/vishakhabhavsar/Desktop/softwaretesting/CPSC5210TestProject/CPSC5210TestProject/VishakhaProject/VishakhaProject.csproj",
-        "packagesPath": "/Users/vishakhabhavsar/.nuget/packages/",
-        "outputPath": "/Users/vishakhabhavsar/Desktop/softwaretesting/CPSC5210TestProject/CPSC5210TestProject/VishakhaProject/obj/",
+        "projectPath": "C:\\Users\\TejasChetan\\Desktop\\TestSoftWare\\CPSC5210TestProject\\CPSC5210TestProject\\VishakhaProject\\VishakhaProject.csproj",
+        "packagesPath": "C:\\Users\\TejasChetan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\TejasChetan\\Desktop\\TestSoftWare\\CPSC5210TestProject\\CPSC5210TestProject\\VishakhaProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/vishakhabhavsar/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\TejasChetan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp1.1"
         ],
         "sources": {
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

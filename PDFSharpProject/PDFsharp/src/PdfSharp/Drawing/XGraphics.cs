@@ -5143,6 +5143,11 @@ namespace PdfSharp.Drawing  // #??? Clean up
             Dispose();
         }
 
+        public static XGraphics FromPdfPage(object page)
+        {
+            throw new NotImplementedException();
+        }
+
         internal InternalGraphicsMode InternalGraphicsMode
         {
             get { return _internalGraphicsMode; }

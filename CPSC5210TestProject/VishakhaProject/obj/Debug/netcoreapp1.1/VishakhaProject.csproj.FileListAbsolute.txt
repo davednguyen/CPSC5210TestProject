@@ -12,3 +12,17 @@
 /Users/vishakhabhavsar/Desktop/softwaretesting/CPSC5210TestProject/CPSC5210TestProject/VishakhaProject/bin/Debug/netcoreapp1.1/VishakhaProject.runtimeconfig.dev.json
 /Users/vishakhabhavsar/Desktop/softwaretesting/CPSC5210TestProject/CPSC5210TestProject/VishakhaProject/bin/Debug/netcoreapp1.1/VishakhaProject.dll
 /Users/vishakhabhavsar/Desktop/softwaretesting/CPSC5210TestProject/CPSC5210TestProject/VishakhaProject/bin/Debug/netcoreapp1.1/VishakhaProject.pdb
+C:\Users\TejasChetan\Desktop\TestSoftWare\CPSC5210TestProject\CPSC5210TestProject\VishakhaProject\bin\Debug\netcoreapp1.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\TejasChetan\Desktop\TestSoftWare\CPSC5210TestProject\CPSC5210TestProject\VishakhaProject\bin\Debug\netcoreapp1.1\xunit.runner.utility.netstandard15.dll
+C:\Users\TejasChetan\Desktop\TestSoftWare\CPSC5210TestProject\CPSC5210TestProject\VishakhaProject\bin\Debug\netcoreapp1.1\xunit.runner.reporters.netstandard15.dll
+C:\Users\TejasChetan\Desktop\TestSoftWare\CPSC5210TestProject\CPSC5210TestProject\VishakhaProject\bin\Debug\netcoreapp1.1\VishakhaProject.deps.json
+C:\Users\TejasChetan\Desktop\TestSoftWare\CPSC5210TestProject\CPSC5210TestProject\VishakhaProject\bin\Debug\netcoreapp1.1\VishakhaProject.runtimeconfig.json
+C:\Users\TejasChetan\Desktop\TestSoftWare\CPSC5210TestProject\CPSC5210TestProject\VishakhaProject\bin\Debug\netcoreapp1.1\VishakhaProject.runtimeconfig.dev.json
+C:\Users\TejasChetan\Desktop\TestSoftWare\CPSC5210TestProject\CPSC5210TestProject\VishakhaProject\bin\Debug\netcoreapp1.1\VishakhaProject.dll
+C:\Users\TejasChetan\Desktop\TestSoftWare\CPSC5210TestProject\CPSC5210TestProject\VishakhaProject\bin\Debug\netcoreapp1.1\VishakhaProject.pdb
+C:\Users\TejasChetan\Desktop\TestSoftWare\CPSC5210TestProject\CPSC5210TestProject\VishakhaProject\obj\Debug\netcoreapp1.1\VishakhaProject.csprojAssemblyReference.cache
+C:\Users\TejasChetan\Desktop\TestSoftWare\CPSC5210TestProject\CPSC5210TestProject\VishakhaProject\obj\Debug\netcoreapp1.1\VishakhaProject.csproj.CoreCompileInputs.cache
+C:\Users\TejasChetan\Desktop\TestSoftWare\CPSC5210TestProject\CPSC5210TestProject\VishakhaProject\obj\Debug\netcoreapp1.1\VishakhaProject.AssemblyInfoInputs.cache
+C:\Users\TejasChetan\Desktop\TestSoftWare\CPSC5210TestProject\CPSC5210TestProject\VishakhaProject\obj\Debug\netcoreapp1.1\VishakhaProject.AssemblyInfo.cs
+C:\Users\TejasChetan\Desktop\TestSoftWare\CPSC5210TestProject\CPSC5210TestProject\VishakhaProject\obj\Debug\netcoreapp1.1\VishakhaProject.dll
+C:\Users\TejasChetan\Desktop\TestSoftWare\CPSC5210TestProject\CPSC5210TestProject\VishakhaProject\obj\Debug\netcoreapp1.1\VishakhaProject.pdb
