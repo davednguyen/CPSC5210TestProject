@@ -31,7 +31,51 @@ namespace CPSC5210TestProject
             PdfPage page = document.AddPage();
         }
 
-       
+        [TestMethod]
+        public void TestCreatePDFDocumentWithName()
+        {
+            PdfDocument testDocument = new PdfDocument("TestFile");
+            Assert.IsNotNull(testDocument);
+        }
+
+        [TestMethod]
+        public void TestCreatePDFDocumentWithNewName()
+        {
+            PdfDocument testDocument = new PdfDocument();
+            Assert.IsNotNull(testDocument);
+        }
+
+        [TestMethod]
+        public void TestClosePDFDocument()
+        {
+            PdfDocument testDocument = new PdfDocument();
+            //PdfReader.Open("testfile");
+            testDocument.Close();
+            //Assert.IsNotNull(testDocument);
+        }
+
+        [TestMethod]
+        public void TestCreatePDFDocumentWithStream()
+        {
+            Stream outputStream = null;
+            PdfDocument testDocument = new PdfDocument(outputStream);
+            Assert.IsNotNull(testDocument);
+        }
+
+        [TestMethod]
+        public void TestDisposePDFDocument()
+        {
+            PdfDocument testDocument = new PdfDocument();
+            testDocument.Dispose();
+        }
+
+        [TestMethod]
+        public void TestDisposeCheckPDFDocument()
+        {
+            PdfDocument testDocument = new PdfDocument();
+            //testDocument.Open();
+            testDocument.Dispose();
+        }
 
         [TestMethod]
         public void TestAddPageToDocument1()
@@ -69,7 +113,8 @@ namespace CPSC5210TestProject
             PdfDocument document = new PdfDocument();
             PdfPage page = document.InsertPage(0);
             PdfDocument newDocument = new PdfDocument();
-            PdfPage newPage = document.InsertPage(1,page);
+            newDocument.InsertPage(1,page);
+            Assert.IsTrue(1 == newDocument.PageCount);
         }
 
         [TestMethod]
@@ -134,12 +179,24 @@ namespace CPSC5210TestProject
         [TestMethod]
         public void TestSaveDocument()
         {
-            PdfDocument document = new PdfDocument();
-            const string filename = "PracticeDocument.pdf";
-            document.Save(filename);
-            //Process.start(filename);
+            
+            //Assert.Equals("PracticeDocument.pdf","Practicedocument.pdf");
+           // PdfDocument document = new PdfDocument();
+           // string filename = "HelloWorld.pdf";
+           // document.Save(filename);
+           // Assert.Equals(filename, "HelloWorld.pdf")           
         }
 
-       
+        [TestMethod]
+        public void TestPrepareForSaveDocument()
+        {
+            PdfDocument document = new PdfDocument();
+            PdfPage page = new PdfPage();
+            PdfObject object = new PdfObject();
+
+            
+        }
+
+
     }
 }
