@@ -35,6 +35,8 @@ namespace CPSC5210TestProject
         public void TestCreatePDFDocumentWithName()
         {
             PdfDocument testDocument = new PdfDocument("TestFile");
+            PdfPage page = testDocument.AddPage();
+            testDocument.Close();
             Assert.IsNotNull(testDocument);
         }
 
@@ -96,7 +98,7 @@ namespace CPSC5210TestProject
         {
             PdfDocument document = new PdfDocument();
             var doc = PdfReader.Open("Hello world.pdf", PdfDocumentOpenMode.Modify);
-            if (doc.AcroForm != null)
+            //if (doc.AcroForm != null)
              doc.Flatten();
 
             //var document = PdfReader.Open("Hello world.pdf");
@@ -110,10 +112,11 @@ namespace CPSC5210TestProject
         [TestMethod]
         public void TestInsertPageFromDocToDocument()
         {
-            PdfDocument document = new PdfDocument();
-            PdfPage page = document.InsertPage(0);
+            //PdfDocument document = new PdfDocument();
+            //PdfPage page = document.InsertPage(0);
+           // document._openMode = PdfDocumentOpenMode.Import;
             PdfDocument newDocument = new PdfDocument();
-            newDocument.InsertPage(1,page);
+            newDocument.InsertPage(0,new PdfPage());
             Assert.IsTrue(1 == newDocument.PageCount);
         }
 
@@ -181,21 +184,27 @@ namespace CPSC5210TestProject
         {
             
             //Assert.Equals("PracticeDocument.pdf","Practicedocument.pdf");
-           // PdfDocument document = new PdfDocument();
-           // string filename = "HelloWorld.pdf";
-           // document.Save(filename);
-           // Assert.Equals(filename, "HelloWorld.pdf")           
+            PdfDocument document = new PdfDocument();
+            string filename = "HelloWorld.pdf";
+            try
+            {
+                document.Save(filename);
+            }
+            catch (Exception e)
+            {
+                Assert.AreEqual("Cannot save a PDF document with no pages.", e.Message);
+            }
+            //Assert.Equals(filename, "HelloWorld.pdf")           
         }
 
-        [TestMethod]
+        /*[TestMethod]
         public void TestPrepareForSaveDocument()
         {
             PdfDocument document = new PdfDocument();
             PdfPage page = new PdfPage();
             PdfObject object = new PdfObject();
-
-            
-        }
+          
+        }*/
 
 
     }
