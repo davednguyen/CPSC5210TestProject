@@ -97,7 +97,7 @@ namespace CPSC5210TestProject
         {
             // Create a font
             XFont font = new XFont("Verdana", 20, XFontStyle.Bold);
-            Assert.AreEqual(12, font.Size);
+            Assert.AreEqual(20, font.Size);
 
         }
     }

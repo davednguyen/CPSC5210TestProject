@@ -34,7 +34,7 @@ namespace CPSC5210TestProject
         [TestMethod]
         public void TestCreatePDFDocumentWithName()
         {
-            PdfDocument testDocument = new PdfDocument("TestFile");
+            PdfDocument testDocument = new PdfDocument("..\\..\\..\\newDoc.pdf");
             PdfPage page = testDocument.AddPage();
             testDocument.Close();
             Assert.IsNotNull(testDocument);
@@ -97,7 +97,7 @@ namespace CPSC5210TestProject
         public void TestFlattenDocument()
         {
             PdfDocument document = new PdfDocument();
-            var doc = PdfReader.Open("Hello world.pdf", PdfDocumentOpenMode.Modify);
+            var doc = PdfReader.Open("..\\..\\..\\blank.pdf", PdfDocumentOpenMode.Modify);
             //if (doc.AcroForm != null)
              doc.Flatten();
 
@@ -123,13 +123,11 @@ namespace CPSC5210TestProject
         [TestMethod]
         public void TestAddPageFromDocToDocument()
         {
-           PdfDocument document = new PdfDocument();
-           PdfPage page1 = document.AddPage();
-            Assert.IsTrue(1 == document.PageCount);
+            PdfDocument inputDocument = PdfReader.Open("..\\..\\..\\blank.pdf", PdfDocumentOpenMode.Import);
+            
            PdfDocument newDocument = new PdfDocument();
-          PdfPage newPage = newDocument.AddPage();
-            newDocument.AddPage(page1);
-           //newDocument.Save("SamplePdf.pdf");
+           newDocument.AddPage(inputDocument.Pages[0]);
+           newDocument.Save("blank2.pdf");
            Assert.IsTrue(1 == newDocument.PageCount);
 
             /*PdfDocument inputDocument = PdfReader.Open("Hello world.pdf", PdfDocumentOpenMode.ReadOnly);
@@ -153,7 +151,18 @@ namespace CPSC5210TestProject
         }
 
         [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void TestAddPageFromDocToDocumentThrowsEx()
+        {
+            PdfDocument inputDocument = PdfReader.Open("..\\..\\..\\blank.pdf");
 
+            PdfDocument newDocument = new PdfDocument();
+            newDocument.AddPage(inputDocument.Pages[0]);
+            newDocument.Save("blank2.pdf");
+            Assert.IsTrue(1 == newDocument.PageCount);
+        }
+
+        [TestMethod]
         public void TestGetXgraphicsPage()
         {
             PdfDocument document = new PdfDocument();
