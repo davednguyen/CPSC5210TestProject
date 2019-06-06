@@ -11,7 +11,7 @@ namespace CPSC5210TestProject
     /// <summary>
     /// Summary description for DavidMainUnitTest
     /// </summary>
-    [TestClass]
+   // [TestClass]
     public class DavidMainUnitTest
     {
         public DavidMainUnitTest()

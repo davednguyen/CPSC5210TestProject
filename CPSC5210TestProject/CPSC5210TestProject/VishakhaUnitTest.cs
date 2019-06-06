@@ -39,7 +39,7 @@ namespace CPSC5210TestProject
             Assert.AreEqual(document.Info.Title, "Created with PDFsharp");
         }
 
-        [TestMethod]
+        //[TestMethod]
         [ExpectedException(typeof(InvalidOperationException))]
         public void TestEmptySaveThrowsException()
         {

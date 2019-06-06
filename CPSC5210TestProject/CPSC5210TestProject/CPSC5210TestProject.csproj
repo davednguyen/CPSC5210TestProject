@@ -64,10 +64,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DavidMainUnitTest.cs" />
-    <Compile Include="MainUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TejasUnitTest.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="UnitTestForCLassPdfDocument.cs" />
     <Compile Include="VishakhaUnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
